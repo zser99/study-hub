@@ -1,0 +1,36 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowAp" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. kube-apiserver를 중심으로 한 통신 흐름</text>
+
+  <rect x="330" y="140" width="160" height="60" rx="8" fill="#1a73a8"/>
+  <text x="410" y="165" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">kube-apiserver</text>
+  <text x="410" y="183" text-anchor="middle" font-size="9.5" fill="#e8f1fb">모든 통신의 관문</text>
+
+  <rect x="330" y="240" width="160" height="46" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="410" y="268" text-anchor="middle" font-size="10.5" fill="#8a6d00">etcd (상태 저장)</text>
+  <line x1="410" y1="200" x2="410" y2="236" stroke="#b8860b" stroke-width="1.8" marker-end="url(#arrowAp)"/>
+
+  <rect x="60" y="50" width="150" height="46" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="135" y="78" text-anchor="middle" font-size="10" fill="#2e7d32">kubectl (사용자)</text>
+  <line x1="150" y1="96" x2="360" y2="150" stroke="#2e7d32" stroke-width="1.6" marker-end="url(#arrowAp)"/>
+
+  <rect x="610" y="50" width="150" height="46" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="685" y="78" text-anchor="middle" font-size="10" fill="#c0392b">kube-scheduler</text>
+  <line x1="670" y1="96" x2="460" y2="150" stroke="#c0392b" stroke-width="1.6" marker-end="url(#arrowAp)"/>
+
+  <rect x="60" y="230" width="150" height="46" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+  <text x="135" y="253" text-anchor="middle" font-size="9.5" fill="#7b3fa0">kube-controller-</text>
+  <text x="135" y="266" text-anchor="middle" font-size="9.5" fill="#7b3fa0">manager</text>
+  <line x1="150" y1="230" x2="360" y2="185" stroke="#7b3fa0" stroke-width="1.6" marker-end="url(#arrowAp)"/>
+
+  <rect x="610" y="230" width="150" height="46" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="685" y="258" text-anchor="middle" font-size="10" fill="#1a73a8">kubelet (각 노드)</text>
+  <line x1="670" y1="230" x2="460" y2="185" stroke="#1a73a8" stroke-width="1.6" marker-end="url(#arrowAp)"/>
+
+  <text x="410" y="315" text-anchor="middle" font-size="12" fill="#555">컴포넌트끼리 직접 통신하지 않고, 반드시 kube-apiserver를 거쳐 상태를 읽고 쓴다</text>
+</svg>

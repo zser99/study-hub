@@ -1,0 +1,43 @@
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="900" height="300" fill="#ffffff"/>
+  <text x="450" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. select/poll의 전체 스캔 vs epoll의 이벤트 통보</text>
+
+  <text x="220" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">select / poll</text>
+  <rect x="60" y="70" width="320" height="150" rx="8" fill="#fdecea" stroke="#c0392b" stroke-width="1.3"/>
+  <g font-size="10">
+    <circle cx="100" cy="100" r="12" fill="#fff" stroke="#c0392b"/>
+    <circle cx="140" cy="100" r="12" fill="#fff" stroke="#c0392b"/>
+    <circle cx="180" cy="100" r="12" fill="#2e7d32" stroke="#2e7d32"/>
+    <circle cx="220" cy="100" r="12" fill="#fff" stroke="#c0392b"/>
+    <circle cx="260" cy="100" r="12" fill="#fff" stroke="#c0392b"/>
+    <circle cx="300" cy="100" r="12" fill="#fff" stroke="#c0392b"/>
+    <circle cx="340" cy="100" r="12" fill="#fff" stroke="#c0392b"/>
+  </g>
+  <text x="220" y="145" text-anchor="middle" font-size="11" fill="#c0392b">매번 이 목록을 처음부터 끝까지</text>
+  <text x="220" y="163" text-anchor="middle" font-size="11" fill="#c0392b">전부 훑어서 준비된 걸 찾는다</text>
+  <text x="220" y="190" text-anchor="middle" font-size="11" fill="#c0392b">(연결 수만큼 매번 O(n))</text>
+
+  <text x="680" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#1a73a8">epoll</text>
+  <rect x="520" y="70" width="320" height="150" rx="8" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.3"/>
+  <g font-size="10">
+    <circle cx="560" cy="100" r="12" fill="#fff" stroke="#1a73a8" stroke-dasharray="2,1"/>
+    <circle cx="600" cy="100" r="12" fill="#fff" stroke="#1a73a8" stroke-dasharray="2,1"/>
+    <circle cx="640" cy="100" r="12" fill="#2e7d32" stroke="#2e7d32"/>
+    <circle cx="680" cy="100" r="12" fill="#fff" stroke="#1a73a8" stroke-dasharray="2,1"/>
+    <circle cx="720" cy="100" r="12" fill="#fff" stroke="#1a73a8" stroke-dasharray="2,1"/>
+    <circle cx="760" cy="100" r="12" fill="#fff" stroke="#1a73a8" stroke-dasharray="2,1"/>
+    <circle cx="800" cy="100" r="12" fill="#fff" stroke="#1a73a8" stroke-dasharray="2,1"/>
+  </g>
+  <line x1="640" y1="112" x2="680" y2="140" stroke="#2e7d32" stroke-width="1.5" marker-end="url(#arrowEp)"/>
+  <text x="680" y="155" text-anchor="middle" font-size="11" fill="#1a73a8">준비된 소켓만</text>
+  <text x="680" y="173" text-anchor="middle" font-size="11" fill="#1a73a8">커널이 콕 집어 알려준다</text>
+  <text x="680" y="196" text-anchor="middle" font-size="11" fill="#1a73a8">(이벤트 발생분만 처리, O(1)에 근접)</text>
+
+  <text x="450" y="270" text-anchor="middle" font-size="12.5" fill="#555">연결 수가 수만 개로 늘어나도 epoll의 실제 처리 비용은 거의 늘지 않는다</text>
+
+  <defs>
+    <marker id="arrowEp" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#2e7d32"/>
+    </marker>
+  </defs>
+</svg>

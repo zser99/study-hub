@@ -1,0 +1,39 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowCf" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. kubelet과 CNI 플러그인의 상호작용</text>
+
+  <rect x="40" y="60" width="150" height="50" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="115" y="90" text-anchor="middle" font-size="10.5" fill="#1a73a8">① kubelet</text>
+
+  <rect x="240" y="60" width="180" height="50" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="330" y="82" text-anchor="middle" font-size="10" fill="#8a6d00">② 컨테이너 런타임</text>
+  <text x="330" y="98" text-anchor="middle" font-size="9" fill="#8a6d00">컨테이너 생성</text>
+
+  <rect x="470" y="60" width="180" height="50" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="560" y="82" text-anchor="middle" font-size="10" fill="#2e7d32">③ CNI 플러그인 호출</text>
+  <text x="560" y="98" text-anchor="middle" font-size="9" fill="#2e7d32">(ADD 오퍼레이션)</text>
+
+  <line x1="190" y1="85" x2="236" y2="85" stroke="#555" stroke-width="1.6" marker-end="url(#arrowCf)"/>
+  <line x1="420" y1="85" x2="466" y2="85" stroke="#555" stroke-width="1.6" marker-end="url(#arrowCf)"/>
+
+  <rect x="240" y="150" width="410" height="110" rx="8" fill="#fdecea" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="445" y="172" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">CNI 플러그인이 수행하는 작업</text>
+  <text x="445" y="196" text-anchor="middle" font-size="10" fill="#c0392b">· Pod에 IP 주소 할당</text>
+  <text x="445" y="216" text-anchor="middle" font-size="10" fill="#c0392b">· 네트워크 인터페이스 연결(wiring)</text>
+  <text x="445" y="236" text-anchor="middle" font-size="10" fill="#c0392b">· 라우팅 규칙 구성</text>
+
+  <line x1="560" y1="110" x2="500" y2="146" stroke="#2e7d32" stroke-width="1.6" marker-end="url(#arrowCf)"/>
+
+  <rect x="40" y="150" width="160" height="110" rx="8" fill="#f3e8fb" stroke="#7b3fa0"/>
+  <text x="120" y="180" text-anchor="middle" font-size="10" fill="#7b3fa0" font-weight="700">DaemonSet으로</text>
+  <text x="120" y="200" text-anchor="middle" font-size="10" fill="#7b3fa0" font-weight="700">모든 노드에 배포</text>
+  <text x="120" y="225" text-anchor="middle" font-size="9" fill="#7b3fa0">(Calico, Cilium 등)</text>
+  <line x1="200" y1="200" x2="236" y2="200" stroke="#7b3fa0" stroke-width="1.6" stroke-dasharray="3,3" marker-end="url(#arrowCf)"/>
+
+  <text x="410" y="300" text-anchor="middle" font-size="12" fill="#555">kubelet은 CNI 표준만 알면 되고, 실제 네트워크 구현은 플러그인에 위임한다</text>
+</svg>

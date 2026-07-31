@@ -1,0 +1,29 @@
+<svg viewBox="0 0 780 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="780" height="340" fill="#ffffff"/>
+  <text x="390" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 블로킹·논블로킹 × 동기·비동기</text>
+
+  <text x="220" y="60" text-anchor="middle" font-size="12.5" font-weight="700" fill="#555">동기 (Sync)</text>
+  <text x="560" y="60" text-anchor="middle" font-size="12.5" font-weight="700" fill="#555">비동기 (Async)</text>
+
+  <text x="60" y="140" font-size="12.5" font-weight="700" fill="#555" transform="rotate(-90 60 140)">블로킹</text>
+  <text x="60" y="290" font-size="12.5" font-weight="700" fill="#555" transform="rotate(-90 60 290)">논블로킹</text>
+
+  <rect x="110" y="80" width="220" height="120" rx="8" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+  <text x="220" y="130" text-anchor="middle" font-size="12.5" fill="#1a73a8" font-weight="700">전통적 블로킹 I/O</text>
+  <text x="220" y="150" text-anchor="middle" font-size="11" fill="#1a73a8">read() 호출 시 멈춰서 대기</text>
+  <text x="220" y="168" text-anchor="middle" font-size="11" fill="#1a73a8">가장 단순, thread-per-connection</text>
+
+  <rect x="450" y="80" width="220" height="120" rx="8" fill="#f7f9fc" stroke="#ccc"/>
+  <text x="560" y="130" text-anchor="middle" font-size="12" fill="#888">거의 쓰이지 않는 조합</text>
+  <text x="560" y="150" text-anchor="middle" font-size="10.5" fill="#888">(대기하면서 콜백을 받는 셈)</text>
+
+  <rect x="110" y="220" width="220" height="100" rx="8" fill="#fff7e6" stroke="#b8860b" stroke-width="1.5"/>
+  <text x="220" y="255" text-anchor="middle" font-size="12" fill="#8a6d00" font-weight="700">Busy Waiting</text>
+  <text x="220" y="275" text-anchor="middle" font-size="10.5" fill="#8a6d00">계속 "됐니?" 직접 반복 확인</text>
+  <text x="220" y="292" text-anchor="middle" font-size="10.5" fill="#8a6d00">CPU 낭비 큼</text>
+
+  <rect x="450" y="220" width="220" height="100" rx="8" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="560" y="253" text-anchor="middle" font-size="12" fill="#2e7d32" font-weight="700">진짜 비동기 (epoll 등)</text>
+  <text x="560" y="273" text-anchor="middle" font-size="10.5" fill="#2e7d32">요청만 던지고 대기 안 함</text>
+  <text x="560" y="290" text-anchor="middle" font-size="10.5" fill="#2e7d32">완료되면 시스템이 통보</text>
+</svg>

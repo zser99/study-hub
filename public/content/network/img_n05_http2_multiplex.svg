@@ -1,0 +1,28 @@
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="900" height="320" fill="#ffffff"/>
+  <text x="450" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. HTTP/1.1 순차 처리 vs HTTP/2 멀티플렉싱</text>
+
+  <text x="220" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">HTTP/1.1 (한 연결, 순차 처리)</text>
+  <rect x="60" y="70" width="320" height="34" fill="#fdecea" stroke="#c0392b"/>
+  <text x="220" y="92" text-anchor="middle" font-size="11" fill="#c0392b">요청 A 처리 중 (느림, 이미지)</text>
+  <rect x="60" y="108" width="320" height="34" fill="#f8d7d3" stroke="#c0392b" stroke-dasharray="3,2"/>
+  <text x="220" y="130" text-anchor="middle" font-size="11" fill="#c0392b">요청 B 대기... (block)</text>
+  <rect x="60" y="146" width="320" height="34" fill="#f8d7d3" stroke="#c0392b" stroke-dasharray="3,2"/>
+  <text x="220" y="168" text-anchor="middle" font-size="11" fill="#c0392b">요청 C 대기... (block)</text>
+  <text x="220" y="200" text-anchor="middle" font-size="11.5" fill="#c0392b">B, C는 A가 끝나야 처리된다</text>
+
+  <text x="680" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#1a73a8">HTTP/2 (한 연결, 스트림 병렬)</text>
+  <rect x="520" y="70" width="320" height="30" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="680" y="90" text-anchor="middle" font-size="11" fill="#1a73a8">스트림1(A) 프레임 + 스트림2(B) 프레임 + 스트림3(C) 프레임 — 뒤섞여 전송</text>
+  <rect x="520" y="108" width="100" height="34" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="570" y="130" text-anchor="middle" font-size="10.5" fill="#1a73a8">스트림1(A)</text>
+  <rect x="630" y="108" width="100" height="34" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="680" y="130" text-anchor="middle" font-size="10.5" fill="#2e7d32">스트림2(B) 완료</text>
+  <rect x="740" y="108" width="100" height="34" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="790" y="130" text-anchor="middle" font-size="10.5" fill="#2e7d32">스트림3(C) 완료</text>
+  <text x="680" y="200" text-anchor="middle" font-size="11.5" fill="#1a73a8">A가 느려도 B, C는 먼저 도착 가능</text>
+
+  <rect x="150" y="240" width="600" height="55" rx="8" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="450" y="262" text-anchor="middle" font-size="12.5" fill="#8a6d00" font-weight="700">단, 아래(TCP) 레벨에서 패킷이 유실되면</text>
+  <text x="450" y="282" text-anchor="middle" font-size="12" fill="#8a6d00">여전히 전체 연결이 멈춘다 → HTTP/3(QUIC)가 해결</text>
+</svg>

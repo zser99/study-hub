@@ -1,0 +1,58 @@
+<svg viewBox="0 0 780 480" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="780" height="480" fill="#ffffff"/>
+  <text x="390" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. OSI 7계층 vs TCP/IP 4계층</text>
+
+  <text x="180" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#1a73a8">OSI 7계층</text>
+  <text x="580" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#2e7d32">TCP/IP 4계층</text>
+
+  <g font-size="12.5">
+    <rect x="60" y="65" width="240" height="40" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+    <text x="180" y="90" text-anchor="middle" fill="#1a73a8">7. 응용 계층</text>
+
+    <rect x="60" y="110" width="240" height="40" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+    <text x="180" y="135" text-anchor="middle" fill="#1a73a8">6. 표현 계층</text>
+
+    <rect x="60" y="155" width="240" height="40" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+    <text x="180" y="180" text-anchor="middle" fill="#1a73a8">5. 세션 계층</text>
+
+    <rect x="60" y="200" width="240" height="40" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="180" y="225" text-anchor="middle" fill="#8a6d00">4. 전송 계층</text>
+
+    <rect x="60" y="245" width="240" height="40" rx="6" fill="#fdecea" stroke="#c0392b"/>
+    <text x="180" y="270" text-anchor="middle" fill="#c0392b">3. 네트워크 계층</text>
+
+    <rect x="60" y="290" width="240" height="40" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+    <text x="180" y="315" text-anchor="middle" fill="#7b3fa0">2. 데이터링크 계층</text>
+
+    <rect x="60" y="335" width="240" height="40" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+    <text x="180" y="360" text-anchor="middle" fill="#7b3fa0">1. 물리 계층</text>
+  </g>
+
+  <g font-size="12.5">
+    <rect x="460" y="65" width="240" height="130" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+    <text x="580" y="135" text-anchor="middle" fill="#2e7d32" font-weight="700">응용 계층</text>
+    <text x="580" y="155" text-anchor="middle" fill="#555" font-size="11">(HTTP, DNS ...)</text>
+
+    <rect x="460" y="200" width="240" height="40" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="580" y="225" text-anchor="middle" fill="#8a6d00">전송 계층 (TCP/UDP)</text>
+
+    <rect x="460" y="245" width="240" height="40" rx="6" fill="#fdecea" stroke="#c0392b"/>
+    <text x="580" y="270" text-anchor="middle" fill="#c0392b">인터넷 계층 (IP)</text>
+
+    <rect x="460" y="290" width="240" height="85" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+    <text x="580" y="335" text-anchor="middle" fill="#7b3fa0" font-weight="700">네트워크 액세스 계층</text>
+    <text x="580" y="355" text-anchor="middle" fill="#555" font-size="11">(이더넷, MAC ...)</text>
+  </g>
+
+  <g stroke="#aaa" stroke-width="1.3" stroke-dasharray="3,3">
+    <line x1="300" y1="85" x2="460" y2="130"/>
+    <line x1="300" y1="130" x2="460" y2="130"/>
+    <line x1="300" y1="175" x2="460" y2="130"/>
+    <line x1="300" y1="220" x2="460" y2="220"/>
+    <line x1="300" y1="265" x2="460" y2="265"/>
+    <line x1="300" y1="310" x2="460" y2="332"/>
+    <line x1="300" y1="355" x2="460" y2="332"/>
+  </g>
+
+  <text x="390" y="420" text-anchor="middle" font-size="12.5" fill="#555">"L2 스위치, L4 로드밸런서, L7 로드밸런서"의 숫자는 왼쪽 OSI 계층 번호를 가리킨다</text>
+</svg>

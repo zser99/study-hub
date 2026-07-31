@@ -1,0 +1,54 @@
+<svg viewBox="0 0 860 400" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowDb" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="860" height="400" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 서비스 연결 문제 — 계층별 진단 흐름</text>
+
+  <rect x="30" y="55" width="120" height="56" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="90" y="78" text-anchor="middle" font-size="10" fill="#1a73a8" font-weight="700">① Pod</text>
+  <text x="90" y="96" text-anchor="middle" font-size="9" fill="#1a73a8">Running 상태?</text>
+
+  <rect x="180" y="55" width="130" height="56" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="245" y="78" text-anchor="middle" font-size="10" fill="#2e7d32" font-weight="700">② Selector</text>
+  <text x="245" y="96" text-anchor="middle" font-size="9" fill="#2e7d32">라벨 일치?</text>
+
+  <rect x="340" y="55" width="140" height="56" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="410" y="78" text-anchor="middle" font-size="10" fill="#8a6d00" font-weight="700">③ EndpointSlice</text>
+  <text x="410" y="96" text-anchor="middle" font-size="9" fill="#8a6d00">IP 채워짐?</text>
+
+  <rect x="510" y="55" width="140" height="56" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="580" y="78" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="700">④ kube-proxy</text>
+  <text x="580" y="96" text-anchor="middle" font-size="9" fill="#c0392b">ClusterIP 접근?</text>
+
+  <rect x="680" y="55" width="150" height="56" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+  <text x="755" y="78" text-anchor="middle" font-size="10" fill="#7b3fa0" font-weight="700">⑤ CoreDNS</text>
+  <text x="755" y="96" text-anchor="middle" font-size="9" fill="#7b3fa0">이름 해석?</text>
+
+  <line x1="150" y1="83" x2="176" y2="83" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDb)"/>
+  <line x1="310" y1="83" x2="336" y2="83" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDb)"/>
+  <line x1="480" y1="83" x2="506" y2="83" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDb)"/>
+  <line x1="650" y1="83" x2="676" y2="83" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDb)"/>
+
+  <rect x="180" y="150" width="140" height="56" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="250" y="173" text-anchor="middle" font-size="10" fill="#1a73a8" font-weight="700">⑥ Ingress/Gateway</text>
+  <text x="250" y="191" text-anchor="middle" font-size="9" fill="#1a73a8">컨트롤러 존재?</text>
+
+  <rect x="400" y="150" width="180" height="56" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="490" y="173" text-anchor="middle" font-size="10" fill="#2e7d32" font-weight="700">⑦ NetworkPolicy</text>
+  <text x="490" y="191" text-anchor="middle" font-size="9" fill="#2e7d32">트래픽 차단 여부?</text>
+
+  <line x1="755" y1="111" x2="500" y2="146" stroke="#555" stroke-width="1.3" stroke-dasharray="3,3" marker-end="url(#arrowDb)"/>
+  <text x="640" y="130" font-size="8.5" fill="#555">외부 접근이면</text>
+
+  <line x1="320" y1="178" x2="396" y2="178" stroke="#555" stroke-width="1.5" marker-end="url(#arrowDb)"/>
+
+  <rect x="130" y="250" width="600" height="90" rx="8" fill="#f9f9f9" stroke="#ccc"/>
+  <text x="430" y="275" text-anchor="middle" font-size="11.5" fill="#333" font-weight="700">"Pod는 살아있는가 → 찾았는가 → 라우팅되는가 → 이름이 풀리는가 →</text>
+  <text x="430" y="297" text-anchor="middle" font-size="11.5" fill="#333" font-weight="700">외부 진입점이 동작하는가 → 트래픽이 막히지 않았는가"</text>
+  <text x="430" y="320" text-anchor="middle" font-size="10" fill="#555">이 순서 하나로 대부분의 연결 문제를 좁혀나갈 수 있다</text>
+
+  <text x="430" y="375" text-anchor="middle" font-size="11" fill="#777">각 단계는 이 시리즈의 2~9편에서 다룬 개념과 정확히 대응한다</text>
+</svg>

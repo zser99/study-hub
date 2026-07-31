@@ -1,0 +1,39 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowIo" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 인터럽트 기반 입출력 처리 흐름</text>
+
+  <text x="60" y="60" font-size="11" font-weight="700" fill="#333">CPU / 프로세스 A</text>
+  <text x="600" y="60" font-size="11" font-weight="700" fill="#333">입출력 장치</text>
+
+  <rect x="40" y="70" width="180" height="40" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="130" y="94" text-anchor="middle" font-size="10" fill="#1a73a8">① 입출력 요청, A는 Waiting 전환</text>
+
+  <line x1="220" y1="90" x2="560" y2="90" stroke="#555" marker-end="url(#arrowIo)"/>
+
+  <rect x="560" y="70" width="200" height="40" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="660" y="94" text-anchor="middle" font-size="10" fill="#8a6d00">장치가 작업 수행 중...</text>
+
+  <rect x="40" y="130" width="180" height="40" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="130" y="154" text-anchor="middle" font-size="10" fill="#2e7d32">② CPU는 다른 프로세스 B 실행 (놀지 않음)</text>
+
+  <line x1="560" y1="150" x2="220" y2="200" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowIo)"/>
+  <rect x="560" y="130" width="200" height="40" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="660" y="154" text-anchor="middle" font-size="10" fill="#c0392b">③ 작업 완료 → 인터럽트 발생</text>
+
+  <rect x="40" y="190" width="180" height="40" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="130" y="214" text-anchor="middle" font-size="10" fill="#c0392b">④ 인터럽트 핸들러 실행</text>
+
+  <rect x="40" y="250" width="180" height="40" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+  <text x="130" y="274" text-anchor="middle" font-size="10" fill="#7b3fa0">⑤ A를 Ready로 전환, 스케줄러가 선택하면 재개</text>
+
+  <line x1="130" y1="110" x2="130" y2="126" stroke="#999" marker-end="url(#arrowIo)"/>
+  <line x1="130" y1="170" x2="130" y2="186" stroke="#999" marker-end="url(#arrowIo)"/>
+  <line x1="130" y1="230" x2="130" y2="246" stroke="#999" marker-end="url(#arrowIo)"/>
+
+  <text x="410" y="315" text-anchor="middle" font-size="12" fill="#555">CPU는 입출력이 끝나길 기다리지 않고, 끝났다는 신호(인터럽트)를 받을 때만 반응한다</text>
+</svg>

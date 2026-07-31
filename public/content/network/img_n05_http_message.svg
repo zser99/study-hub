@@ -1,0 +1,26 @@
+<svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="860" height="300" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. HTTP 요청 / 응답 메시지 구조</text>
+
+  <text x="215" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#2e7d32">요청 (Request)</text>
+  <rect x="40" y="65" width="350" height="35" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="215" y="88" text-anchor="middle" font-size="11.5" fill="#2e7d32">GET /orders/1 HTTP/1.1</text>
+  <rect x="40" y="100" width="350" height="70" fill="#f4faf4" stroke="#2e7d32"/>
+  <text x="215" y="120" text-anchor="middle" font-size="10.5" fill="#2e7d32">Host: api.example.com</text>
+  <text x="215" y="138" text-anchor="middle" font-size="10.5" fill="#2e7d32">Authorization: Bearer ...</text>
+  <text x="215" y="156" text-anchor="middle" font-size="10.5" fill="#2e7d32">Cookie: session=abc123</text>
+  <rect x="40" y="170" width="350" height="40" fill="#fff" stroke="#2e7d32" stroke-dasharray="3,2"/>
+  <text x="215" y="194" text-anchor="middle" font-size="10.5" fill="#999">바디(GET은 보통 비어 있음)</text>
+
+  <text x="640" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#1a73a8">응답 (Response)</text>
+  <rect x="470" y="65" width="350" height="35" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="645" y="88" text-anchor="middle" font-size="11.5" fill="#1a73a8">HTTP/1.1 200 OK</text>
+  <rect x="470" y="100" width="350" height="50" fill="#eef4fb" stroke="#1a73a8"/>
+  <text x="645" y="120" text-anchor="middle" font-size="10.5" fill="#1a73a8">Content-Type: application/json</text>
+  <text x="645" y="138" text-anchor="middle" font-size="10.5" fill="#1a73a8">Cache-Control: max-age=3600</text>
+  <rect x="470" y="150" width="350" height="60" fill="#fff" stroke="#1a73a8" stroke-dasharray="3,2"/>
+  <text x="645" y="184" text-anchor="middle" font-size="10.5" fill="#999">{ "id": 1, "status": "OK" }</text>
+
+  <text x="430" y="245" text-anchor="middle" font-size="12.5" fill="#555">요청은 "무엇을 어떻게" (메서드+URL), 응답은 "결과가 어땠는지" (상태 코드)로 시작한다</text>
+  <text x="430" y="268" text-anchor="middle" font-size="12" fill="#555">헤더는 부가 정보, 바디는 실제 데이터 — 이 구조는 버전이 바뀌어도 논리적으로 동일하다</text>
+</svg>

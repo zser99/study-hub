@@ -1,0 +1,32 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. Endpoints(단일) vs EndpointSlice(분할)의 갱신 범위</text>
+
+  <text x="200" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#c0392b">레거시 Endpoints (Pod 1000개)</text>
+  <rect x="60" y="65" width="280" height="110" rx="6" fill="#fdecea" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="200" y="95" text-anchor="middle" font-size="9.5" fill="#c0392b">오브젝트 하나에 IP 1000개 전부</text>
+  <rect x="80" y="110" width="240" height="20" fill="#fff" stroke="#c0392b"/>
+  <text x="200" y="124" text-anchor="middle" font-size="8" fill="#c0392b">IP1, IP2, IP3, ... IP1000</text>
+  <text x="200" y="155" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="700">Pod 1개 변경 → 전체 재전파</text>
+
+  <line x1="200" y1="175" x2="200" y2="210" stroke="#c0392b" stroke-width="1.5"/>
+  <rect x="90" y="215" width="220" height="40" rx="6" fill="#c0392b"/>
+  <text x="200" y="240" text-anchor="middle" font-size="10" fill="#fff">모든 노드에 1000개 전체 전송</text>
+
+  <text x="610" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#2e7d32">EndpointSlice (100개씩 10조각)</text>
+  <rect x="440" y="65" width="340" height="110" rx="6" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="455" y="85" width="60" height="24" fill="#fff" stroke="#2e7d32"/><text x="485" y="101" text-anchor="middle" font-size="7.5" fill="#2e7d32">Slice1</text>
+  <rect x="520" y="85" width="60" height="24" fill="#fff" stroke="#c0392b"/><text x="550" y="101" text-anchor="middle" font-size="7.5" fill="#c0392b">Slice2 ★</text>
+  <rect x="585" y="85" width="60" height="24" fill="#fff" stroke="#2e7d32"/><text x="615" y="101" text-anchor="middle" font-size="7.5" fill="#2e7d32">Slice3</text>
+  <rect x="650" y="85" width="60" height="24" fill="#fff" stroke="#2e7d32"/><text x="680" y="101" text-anchor="middle" font-size="7.5" fill="#2e7d32">Slice4</text>
+  <rect x="715" y="85" width="55" height="24" fill="#fff" stroke="#2e7d32"/><text x="742" y="101" text-anchor="middle" font-size="7" fill="#2e7d32">...Slice10</text>
+  <text x="610" y="128" text-anchor="middle" font-size="9" fill="#2e7d32">각 슬라이스는 최대 100개 IP만</text>
+  <text x="610" y="155" text-anchor="middle" font-size="9" fill="#2e7d32" font-weight="700">Pod 1개 변경 → 해당 슬라이스만 재전파</text>
+
+  <line x1="550" y1="175" x2="550" y2="210" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="470" y="215" width="160" height="40" rx="6" fill="#2e7d32"/>
+  <text x="550" y="240" text-anchor="middle" font-size="10" fill="#fff">Slice2 (100개)만 전송</text>
+
+  <text x="410" y="295" text-anchor="middle" font-size="12" fill="#555">같은 변경이라도 전파되는 데이터 양이 최대 10분의 1 수준으로 줄어든다</text>
+  <text x="410" y="315" text-anchor="middle" font-size="10.5" fill="#777">쿠버네티스 1.33부터 레거시 Endpoints는 공식 지원 중단(deprecated) 상태</text>
+</svg>

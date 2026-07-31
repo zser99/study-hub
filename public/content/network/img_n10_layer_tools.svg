@@ -1,0 +1,38 @@
+<svg viewBox="0 0 780 400" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="780" height="400" fill="#ffffff"/>
+  <text x="390" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 계층별 진단 체크리스트</text>
+
+  <g font-size="12">
+    <rect x="60" y="50" width="280" height="38" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+    <text x="200" y="74" text-anchor="middle" fill="#2e7d32">7. 응용(HTTP) 응답 정상? 시간은?</text>
+    <rect x="420" y="50" width="260" height="38" rx="6" fill="#fff" stroke="#2e7d32" stroke-dasharray="2,2"/>
+    <text x="550" y="74" text-anchor="middle" fill="#2e7d32">curl -w</text>
+
+    <rect x="60" y="98" width="280" height="38" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+    <text x="200" y="122" text-anchor="middle" fill="#7b3fa0">6. TLS handshake 성공?</text>
+    <rect x="420" y="98" width="260" height="38" rx="6" fill="#fff" stroke="#7b3fa0" stroke-dasharray="2,2"/>
+    <text x="550" y="122" text-anchor="middle" fill="#7b3fa0">curl -v</text>
+
+    <rect x="60" y="146" width="280" height="38" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="200" y="170" text-anchor="middle" fill="#8a6d00">DNS가 맞는 IP를 주는가?</text>
+    <rect x="420" y="146" width="260" height="38" rx="6" fill="#fff" stroke="#b8860b" stroke-dasharray="2,2"/>
+    <text x="550" y="170" text-anchor="middle" fill="#8a6d00">dig, nslookup</text>
+
+    <rect x="60" y="194" width="280" height="38" rx="6" fill="#fdecea" stroke="#c0392b"/>
+    <text x="200" y="218" text-anchor="middle" fill="#c0392b">4. TCP 포트는 열려 있는가?</text>
+    <rect x="420" y="194" width="260" height="38" rx="6" fill="#fff" stroke="#c0392b" stroke-dasharray="2,2"/>
+    <text x="550" y="218" text-anchor="middle" fill="#c0392b">netstat, ss, telnet</text>
+
+    <rect x="60" y="242" width="280" height="38" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+    <text x="200" y="266" text-anchor="middle" fill="#1a73a8">3. IP 도달성, 경로는?</text>
+    <rect x="420" y="242" width="260" height="38" rx="6" fill="#fff" stroke="#1a73a8" stroke-dasharray="2,2"/>
+    <text x="550" y="266" text-anchor="middle" fill="#1a73a8">ping, traceroute</text>
+
+    <rect x="60" y="290" width="280" height="38" rx="6" fill="#f0f0f0" stroke="#666"/>
+    <text x="200" y="314" text-anchor="middle" fill="#444">1~2. 케이블/와이파이 연결됐나?</text>
+    <rect x="420" y="290" width="260" height="38" rx="6" fill="#fff" stroke="#666" stroke-dasharray="2,2"/>
+    <text x="550" y="314" text-anchor="middle" fill="#444">물리적 확인</text>
+  </g>
+
+  <text x="390" y="360" text-anchor="middle" font-size="12.5" fill="#555">위에서 실패하면 아래 계층부터 순서대로 확인해 문제를 좁혀나간다</text>
+</svg>

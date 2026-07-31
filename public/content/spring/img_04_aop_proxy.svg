@@ -1,0 +1,41 @@
+<svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="880" height="300" fill="#ffffff"/>
+  <text x="440" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. AOP 프록시 호출 흐름 (@Around)</text>
+
+  <rect x="30" y="110" width="110" height="55" rx="10" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="85" y="142" text-anchor="middle" font-size="13" fill="#2e7d32">Client</text>
+
+  <rect x="220" y="80" width="440" height="120" rx="12" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.7"/>
+  <text x="440" y="100" text-anchor="middle" font-size="13" font-weight="700" fill="#1a73a8">프록시 (Advice)</text>
+
+  <rect x="240" y="115" width="150" height="40" rx="8" fill="#ffffff" stroke="#1a73a8"/>
+  <text x="315" y="139" text-anchor="middle" font-size="12" fill="#1a73a8">① 시작 시간 기록</text>
+
+  <rect x="410" y="115" width="230" height="40" rx="8" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="525" y="139" text-anchor="middle" font-size="12" fill="#8a6d00">② proceed() → 대상 실행</text>
+
+  <rect x="240" y="165" width="150" height="25" rx="6" fill="#ffffff" stroke="#1a73a8"/>
+  <text x="315" y="182" text-anchor="middle" font-size="11.5" fill="#1a73a8">③ 소요 시간 로그</text>
+
+  <rect x="720" y="110" width="120" height="55" rx="10" fill="#f3e8fb" stroke="#7b3fa0" stroke-width="1.5"/>
+  <text x="780" y="135" text-anchor="middle" font-size="12.5" fill="#7b3fa0">OrderService</text>
+  <text x="780" y="152" text-anchor="middle" font-size="11" fill="#7b3fa0">(원본 대상)</text>
+
+  <g stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow4)">
+    <line x1="140" y1="137" x2="215" y2="137"/>
+    <line x1="640" y1="137" x2="715" y2="137"/>
+  </g>
+  <path d="M780,165 C780,220 440,240 250,190" stroke="#999" stroke-width="1.6" fill="none" stroke-dasharray="4,3" marker-end="url(#arrowGray)"/>
+  <text x="500" y="235" text-anchor="middle" font-size="11.5" fill="#777">실행 결과 반환</text>
+
+  <text x="440" y="270" text-anchor="middle" font-size="13" fill="#555">클라이언트는 프록시를 호출하고, 프록시가 부가 로직 사이에 원본 메서드를 끼워 실행한다</text>
+
+  <defs>
+    <marker id="arrow4" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#666"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#999"/>
+    </marker>
+  </defs>
+</svg>

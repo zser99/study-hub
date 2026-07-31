@@ -1,0 +1,34 @@
+<svg viewBox="0 0 780 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowCl" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="780" height="320" fill="#ffffff"/>
+  <text x="390" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 컨트롤 루프 — Desired State를 향한 지속적 조정</text>
+
+  <rect x="60" y="70" width="180" height="56" rx="8" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="150" y="93" text-anchor="middle" font-size="10.5" fill="#1a73a8" font-weight="700">Desired State</text>
+  <text x="150" y="111" text-anchor="middle" font-size="9.5" fill="#1a73a8">"Pod 3개가 있어야 한다" (etcd)</text>
+
+  <rect x="540" y="70" width="180" height="56" rx="8" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="630" y="93" text-anchor="middle" font-size="10.5" fill="#8a6d00" font-weight="700">Current State</text>
+  <text x="630" y="111" text-anchor="middle" font-size="9.5" fill="#8a6d00">실제 클러스터의 지금 상태</text>
+
+  <rect x="290" y="150" width="200" height="70" rx="8" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="390" y="178" text-anchor="middle" font-size="11" fill="#2e7d32" font-weight="700">컨트롤러</text>
+  <text x="390" y="196" text-anchor="middle" font-size="9.5" fill="#2e7d32">두 상태를 비교하고</text>
+  <text x="390" y="210" text-anchor="middle" font-size="9.5" fill="#2e7d32">차이를 좁히는 액션 실행</text>
+
+  <path d="M240,98 L286,170" stroke="#1a73a8" stroke-width="1.8" fill="none" marker-end="url(#arrowCl)"/>
+  <text x="270" y="130" font-size="9" fill="#1a73a8">읽기</text>
+
+  <path d="M490,185 L536,98" stroke="#b8860b" stroke-width="1.8" fill="none" marker-end="url(#arrowCl)"/>
+  <text x="510" y="130" font-size="9" fill="#8a6d00">읽기</text>
+
+  <path d="M490,205 Q650,260 630,130" stroke="#2e7d32" stroke-width="1.8" fill="none" marker-end="url(#arrowCl)"/>
+  <text x="600" y="255" font-size="9" fill="#2e7d32">Pod 생성/삭제로 조정</text>
+
+  <text x="390" y="270" text-anchor="middle" font-size="12" fill="#555">Pod가 죽어서 2개가 되면 → 컨트롤러가 감지 → 1개를 새로 생성</text>
+  <text x="390" y="292" text-anchor="middle" font-size="11" fill="#777">이 루프는 API 서버를 거쳐 끊임없이 반복된다</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 가상 머신 vs 컨테이너 아키텍처</text>
+
+  <text x="195" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">가상 머신</text>
+  <rect x="70" y="62" width="250" height="240" rx="6" fill="#fdecea" stroke="#c0392b" stroke-width="1.5"/>
+  <rect x="85" y="72" width="220" height="24" fill="#fff" stroke="#c0392b"/><text x="195" y="88" text-anchor="middle" font-size="9.5" fill="#c0392b">앱 A / 앱 B / 앱 C</text>
+  <rect x="85" y="100" width="105" height="60" fill="#fff" stroke="#c0392b"/><text x="137" y="120" text-anchor="middle" font-size="9" fill="#c0392b">게스트 OS</text><text x="137" y="135" text-anchor="middle" font-size="8.5" fill="#c0392b">(커널 포함)</text>
+  <rect x="200" y="100" width="105" height="60" fill="#fff" stroke="#c0392b"/><text x="252" y="120" text-anchor="middle" font-size="9" fill="#c0392b">게스트 OS</text><text x="252" y="135" text-anchor="middle" font-size="8.5" fill="#c0392b">(커널 포함)</text>
+  <rect x="85" y="168" width="220" height="30" fill="#fff7e6" stroke="#b8860b"/><text x="195" y="187" text-anchor="middle" font-size="9.5" fill="#8a6d00">하이퍼바이저</text>
+  <rect x="85" y="206" width="220" height="30" fill="#eef7ee" stroke="#2e7d32"/><text x="195" y="225" text-anchor="middle" font-size="9.5" fill="#2e7d32">호스트 OS (선택적)</text>
+  <rect x="85" y="244" width="220" height="30" fill="#e8f1fb" stroke="#1a73a8"/><text x="195" y="263" text-anchor="middle" font-size="9.5" fill="#1a73a8">물리 하드웨어</text>
+  <text x="195" y="292" text-anchor="middle" font-size="9.5" fill="#c0392b">커널마다 따로 → 무겁지만 강한 격리</text>
+
+  <text x="620" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#1a73a8">컨테이너</text>
+  <rect x="495" y="62" width="250" height="240" rx="6" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+  <rect x="510" y="72" width="65" height="50" fill="#fff" stroke="#1a73a8"/><text x="542" y="100" text-anchor="middle" font-size="9" fill="#1a73a8">앱 A</text>
+  <rect x="583" y="72" width="65" height="50" fill="#fff" stroke="#1a73a8"/><text x="615" y="100" text-anchor="middle" font-size="9" fill="#1a73a8">앱 B</text>
+  <rect x="656" y="72" width="65" height="50" fill="#fff" stroke="#1a73a8"/><text x="688" y="100" text-anchor="middle" font-size="9" fill="#1a73a8">앱 C</text>
+  <text x="620" y="136" text-anchor="middle" font-size="9" fill="#1a73a8">(각각 네임스페이스+cgroup으로 격리)</text>
+  <rect x="510" y="150" width="211" height="30" fill="#fff7e6" stroke="#b8860b"/><text x="615" y="169" text-anchor="middle" font-size="9.5" fill="#8a6d00">컨테이너 런타임</text>
+  <rect x="510" y="188" width="211" height="30" fill="#eef7ee" stroke="#2e7d32"/><text x="615" y="207" text-anchor="middle" font-size="9.5" fill="#2e7d32">호스트 OS 커널 (공유)</text>
+  <rect x="510" y="226" width="211" height="30" fill="#e8f1fb" stroke="#1a73a8"/><text x="615" y="245" text-anchor="middle" font-size="9.5" fill="#1a73a8">물리 하드웨어</text>
+  <text x="615" y="292" text-anchor="middle" font-size="9.5" fill="#1a73a8">커널 하나를 공유 → 가볍고 빠르지만 격리는 상대적으로 약함</text>
+</svg>

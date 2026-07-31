@@ -1,0 +1,27 @@
+<svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="820" height="320" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. NetworkPolicy의 구조</text>
+
+  <rect x="60" y="55" width="240" height="70" rx="8" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+  <text x="180" y="80" text-anchor="middle" font-size="11" fill="#1a73a8" font-weight="700">podSelector</text>
+  <text x="180" y="100" text-anchor="middle" font-size="9.5" fill="#1a73a8">app: payment</text>
+  <text x="180" y="115" text-anchor="middle" font-size="8.5" fill="#1a73a8">(정책 적용 대상)</text>
+
+  <rect x="330" y="55" width="220" height="70" rx="8" fill="#fff7e6" stroke="#b8860b" stroke-width="1.5"/>
+  <text x="440" y="80" text-anchor="middle" font-size="11" fill="#8a6d00" font-weight="700">ingress.from</text>
+  <text x="440" y="100" text-anchor="middle" font-size="9.5" fill="#8a6d00">app: order, port 8080</text>
+  <text x="440" y="115" text-anchor="middle" font-size="8.5" fill="#8a6d00">(들어오는 트래픽 허용)</text>
+
+  <rect x="580" y="55" width="220" height="70" rx="8" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="690" y="80" text-anchor="middle" font-size="11" fill="#2e7d32" font-weight="700">egress.to</text>
+  <text x="690" y="100" text-anchor="middle" font-size="9.5" fill="#2e7d32">app: database, port 5432</text>
+  <text x="690" y="115" text-anchor="middle" font-size="8.5" fill="#2e7d32">(나가는 트래픽 허용)</text>
+
+  <rect x="200" y="170" width="420" height="90" rx="8" fill="#f3e8fb" stroke="#7b3fa0" stroke-width="1.5"/>
+  <text x="410" y="195" text-anchor="middle" font-size="11.5" fill="#7b3fa0" font-weight="700">결과: payment Pod는 order로부터만 받고,</text>
+  <text x="410" y="215" text-anchor="middle" font-size="11.5" fill="#7b3fa0" font-weight="700">database로만 나갈 수 있다</text>
+  <text x="410" y="240" text-anchor="middle" font-size="9.5" fill="#7b3fa0">그 외 모든 인바운드·아웃바운드는 차단</text>
+
+  <rect x="130" y="280" width="560" height="30" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="410" y="300" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="700">단, Calico·Cilium 같은 지원 CNI가 있어야 이 규칙이 실제로 집행된다</text>
+</svg>

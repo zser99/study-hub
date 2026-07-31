@@ -1,0 +1,37 @@
+<svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowDm" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="820" height="320" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. CPU 직접 전송 vs DMA를 통한 전송</text>
+
+  <text x="200" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#c0392b">CPU 직접 전송</text>
+  <rect x="80" y="70" width="90" height="46" rx="6" fill="#fdecea" stroke="#c0392b"/><text x="125" y="97" text-anchor="middle" font-size="10" fill="#c0392b">CPU</text>
+  <rect x="290" y="70" width="90" height="46" rx="6" fill="#fff" stroke="#999"/><text x="335" y="97" text-anchor="middle" font-size="10" fill="#555">메모리</text>
+  <path d="M170,80 L290,80" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowDm)"/>
+  <path d="M170,106 L60,150 L170,106" fill="none"/>
+  <rect x="80" y="140" width="90" height="46" rx="6" fill="#fff" stroke="#999"/><text x="125" y="167" text-anchor="middle" font-size="10" fill="#555">디스크</text>
+  <path d="M125,140 L125,116" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowDm)"/>
+  <text x="230" y="200" text-anchor="middle" font-size="10" fill="#c0392b">CPU가 바이트 하나하나를 직접 옮김 → 전송 내내 CPU 점유</text>
+
+  <text x="620" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#1a73a8">DMA를 통한 전송</text>
+  <rect x="530" y="70" width="90" height="46" rx="6" fill="#e8f1fb" stroke="#1a73a8"/><text x="575" y="97" text-anchor="middle" font-size="10" fill="#1a73a8">CPU</text>
+  <rect x="660" y="140" width="100" height="46" rx="6" fill="#eef7ee" stroke="#2e7d32"/><text x="710" y="167" text-anchor="middle" font-size="9.5" fill="#2e7d32">DMA 컨트롤러</text>
+  <rect x="530" y="210" width="90" height="46" rx="6" fill="#fff" stroke="#999"/><text x="575" y="237" text-anchor="middle" font-size="10" fill="#555">메모리</text>
+  <rect x="660" y="210" width="100" height="46" rx="6" fill="#fff" stroke="#999"/><text x="710" y="237" text-anchor="middle" font-size="10" fill="#555">디스크</text>
+
+  <path d="M620,90 L660,150" stroke="#1a73a8" stroke-width="1.8" marker-end="url(#arrowDm)"/>
+  <text x="655" y="115" font-size="8.5" fill="#1a73a8">① 전송 지시만</text>
+
+  <path d="M660,180 L620,225" stroke="#2e7d32" stroke-width="1.8" marker-end="url(#arrowDm)"/>
+  <text x="600" y="205" font-size="8.5" fill="#2e7d32">② 직접 전송</text>
+
+  <path d="M710,186 L710,206" stroke="#2e7d32" stroke-width="1.8" marker-end="url(#arrowDm)"/>
+
+  <path d="M700,140 Q580,110 585,105" fill="none" stroke="#c0392b" stroke-dasharray="3,3" stroke-width="1.5" marker-end="url(#arrowDm)"/>
+  <text x="600" y="60" font-size="8.5" fill="#c0392b">③ 완료 시 인터럽트로만 통지</text>
+
+  <text x="650" y="290" text-anchor="middle" font-size="10" fill="#1a73a8">CPU는 지시만 하고, 전송이 끝나는 동안 다른 작업을 계속한다</text>
+</svg>

@@ -1,0 +1,62 @@
+// public/content 디렉터리를 스캔해서 src/data/posts.json 매니페스트를 생성한다.
+import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
+import { join, dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const contentRoot = join(__dirname, '..', 'public', 'content')
+const outDir = join(__dirname, '..', 'src', 'data')
+const outFile = join(outDir, 'posts.json')
+
+const seriesMeta = {
+  spring: { label: 'Spring', color: '#1a73a8', order: 1 },
+  network: { label: 'Network', color: '#2e7d32', order: 2 },
+  os: { label: '운영체제', color: '#b8860b', order: 3 },
+  k8s: { label: 'Kubernetes', color: '#7b3fa0', order: 4 }
+}
+
+function extractTitle(mdText, fallback) {
+  const lines = mdText.split('\n')
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (trimmed.startsWith('# ')) {
+      return trimmed.replace(/^#\s+/, '').trim()
+    }
+  }
+  return fallback
+}
+
+const posts = []
+
+for (const seriesKey of Object.keys(seriesMeta)) {
+  const dir = join(contentRoot, seriesKey)
+  if (!existsSync(dir)) continue
+  const files = readdirSync(dir).filter((f) => f.endsWith('.md')).sort()
+  files.forEach((file, idx) => {
+    const fullPath = join(dir, file)
+    const text = readFileSync(fullPath, 'utf-8')
+    const title = extractTitle(text, file)
+    const slug = file.replace(/\.md$/, '')
+    posts.push({
+      id: `${seriesKey}-${slug}`,
+      series: seriesKey,
+      seriesLabel: seriesMeta[seriesKey].label,
+      seriesColor: seriesMeta[seriesKey].color,
+      seriesOrder: seriesMeta[seriesKey].order,
+      indexInSeries: idx + 1,
+      slug,
+      title,
+      path: `content/${seriesKey}/${file}`
+    })
+  })
+}
+
+posts.sort((a, b) => {
+  if (a.seriesOrder !== b.seriesOrder) return a.seriesOrder - b.seriesOrder
+  return a.indexInSeries - b.indexInSeries
+})
+
+if (!existsSync(outDir)) mkdirSync(outDir, { recursive: true })
+writeFileSync(outFile, JSON.stringify(posts, null, 2), 'utf-8')
+
+console.log(`생성 완료: ${posts.length}개 포스트 → ${outFile}`)

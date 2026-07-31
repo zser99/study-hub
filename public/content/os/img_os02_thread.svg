@@ -1,0 +1,31 @@
+<svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="860" height="320" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. 멀티프로세스 vs 멀티스레드 메모리 구조</text>
+
+  <text x="200" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">멀티프로세스 (독립 메모리)</text>
+  <rect x="60" y="70" width="150" height="140" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="135" y="90" text-anchor="middle" font-size="10" fill="#c0392b">프로세스 A</text>
+  <rect x="70" y="98" width="130" height="18" fill="#fff" stroke="#c0392b"/><text x="135" y="111" text-anchor="middle" font-size="8.5" fill="#c0392b">Code</text>
+  <rect x="70" y="118" width="130" height="18" fill="#fff" stroke="#c0392b"/><text x="135" y="131" text-anchor="middle" font-size="8.5" fill="#c0392b">Data</text>
+  <rect x="70" y="138" width="130" height="18" fill="#fff" stroke="#c0392b"/><text x="135" y="151" text-anchor="middle" font-size="8.5" fill="#c0392b">Heap</text>
+  <rect x="70" y="158" width="130" height="18" fill="#fff" stroke="#c0392b"/><text x="135" y="171" text-anchor="middle" font-size="8.5" fill="#c0392b">Stack</text>
+
+  <rect x="230" y="70" width="150" height="140" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="305" y="90" text-anchor="middle" font-size="10" fill="#c0392b">프로세스 B</text>
+  <rect x="240" y="98" width="130" height="18" fill="#fff" stroke="#c0392b"/><text x="305" y="111" text-anchor="middle" font-size="8.5" fill="#c0392b">Code</text>
+  <rect x="240" y="118" width="130" height="18" fill="#fff" stroke="#c0392b"/><text x="305" y="131" text-anchor="middle" font-size="8.5" fill="#c0392b">Data</text>
+  <rect x="240" y="138" width="130" height="18" fill="#fff" stroke="#c0392b"/><text x="305" y="151" text-anchor="middle" font-size="8.5" fill="#c0392b">Heap</text>
+  <rect x="240" y="158" width="130" height="18" fill="#fff" stroke="#c0392b"/><text x="305" y="171" text-anchor="middle" font-size="8.5" fill="#c0392b">Stack</text>
+  <text x="200" y="230" text-anchor="middle" font-size="10.5" fill="#555">완전 독립 → 안전하지만</text>
+  <text x="200" y="248" text-anchor="middle" font-size="10.5" fill="#555">통신하려면 IPC 필요</text>
+
+  <text x="650" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#1a73a8">멀티스레드 (메모리 공유)</text>
+  <rect x="480" y="70" width="340" height="140" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <rect x="495" y="82" width="310" height="20" fill="#fff" stroke="#1a73a8"/><text x="650" y="96" text-anchor="middle" font-size="9" fill="#1a73a8">Code (공유)</text>
+  <rect x="495" y="104" width="310" height="20" fill="#fff" stroke="#1a73a8"/><text x="650" y="118" text-anchor="middle" font-size="9" fill="#1a73a8">Data (공유)</text>
+  <rect x="495" y="126" width="310" height="20" fill="#fff" stroke="#1a73a8"/><text x="650" y="140" text-anchor="middle" font-size="9" fill="#1a73a8">Heap (공유)</text>
+  <rect x="495" y="150" width="150" height="50" fill="#fff7e6" stroke="#b8860b"/><text x="570" y="178" text-anchor="middle" font-size="9" fill="#8a6d00">Stack (스레드1)</text>
+  <rect x="655" y="150" width="150" height="50" fill="#fff7e6" stroke="#b8860b"/><text x="730" y="178" text-anchor="middle" font-size="9" fill="#8a6d00">Stack (스레드2)</text>
+  <text x="650" y="230" text-anchor="middle" font-size="10.5" fill="#555">스택만 독립 → 가볍지만</text>
+  <text x="650" y="248" text-anchor="middle" font-size="10.5" fill="#555">공유 데이터 동시 접근 위험</text>
+</svg>

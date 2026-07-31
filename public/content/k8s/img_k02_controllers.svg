@@ -1,0 +1,42 @@
+<svg viewBox="0 0 860 420" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="860" height="420" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. 워크로드 컨트롤러별 Pod 배치 패턴</text>
+
+  <text x="150" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#1a73a8">Deployment</text>
+  <rect x="40" y="65" width="220" height="90" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <rect x="60" y="90" width="50" height="40" fill="#fff" stroke="#1a73a8"/><text x="85" y="114" text-anchor="middle" font-size="9" fill="#1a73a8">Pod</text>
+  <rect x="120" y="90" width="50" height="40" fill="#fff" stroke="#1a73a8"/><text x="145" y="114" text-anchor="middle" font-size="9" fill="#1a73a8">Pod</text>
+  <rect x="180" y="90" width="50" height="40" fill="#fff" stroke="#1a73a8"/><text x="205" y="114" text-anchor="middle" font-size="9" fill="#1a73a8">Pod</text>
+  <text x="150" y="145" text-anchor="middle" font-size="8.5" fill="#1a73a8">"N개, 어디에 있든 상관없음"</text>
+
+  <text x="430" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#2e7d32">DaemonSet</text>
+  <rect x="320" y="65" width="220" height="90" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <rect x="335" y="80" width="60" height="30" fill="#fff" stroke="#2e7d32"/><text x="365" y="99" text-anchor="middle" font-size="8" fill="#2e7d32">Node1: Pod</text>
+  <rect x="400" y="80" width="60" height="30" fill="#fff" stroke="#2e7d32"/><text x="430" y="99" text-anchor="middle" font-size="8" fill="#2e7d32">Node2: Pod</text>
+  <rect x="465" y="80" width="60" height="30" fill="#fff" stroke="#2e7d32"/><text x="495" y="99" text-anchor="middle" font-size="8" fill="#2e7d32">Node3: Pod</text>
+  <text x="430" y="130" text-anchor="middle" font-size="8.5" fill="#2e7d32">"모든 노드에 정확히 1개씩"</text>
+  <text x="430" y="145" text-anchor="middle" font-size="8" fill="#2e7d32">(kube-proxy, CNI 플러그인 등)</text>
+
+  <text x="710" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#7b3fa0">StatefulSet</text>
+  <rect x="600" y="65" width="220" height="90" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+  <rect x="620" y="90" width="50" height="40" fill="#fff" stroke="#7b3fa0"/><text x="645" y="114" text-anchor="middle" font-size="9" fill="#7b3fa0">db-0</text>
+  <rect x="680" y="90" width="50" height="40" fill="#fff" stroke="#7b3fa0"/><text x="705" y="114" text-anchor="middle" font-size="9" fill="#7b3fa0">db-1</text>
+  <rect x="740" y="90" width="50" height="40" fill="#fff" stroke="#7b3fa0"/><text x="765" y="114" text-anchor="middle" font-size="9" fill="#7b3fa0">db-2</text>
+  <text x="710" y="145" text-anchor="middle" font-size="8.5" fill="#7b3fa0">"이름·데이터가 고정된 N개"</text>
+
+  <text x="290" y="200" text-anchor="middle" font-size="12" font-weight="700" fill="#b8860b">Job / CronJob</text>
+  <rect x="130" y="210" width="320" height="90" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <rect x="150" y="230" width="60" height="40" fill="#fff" stroke="#b8860b"/><text x="180" y="254" text-anchor="middle" font-size="8.5" fill="#8a6d00">Job 실행</text>
+  <text x="260" y="255" font-size="14" fill="#8a6d00">→</text>
+  <rect x="290" y="230" width="60" height="40" fill="#eef7ee" stroke="#2e7d32"/><text x="320" y="254" text-anchor="middle" font-size="8.5" fill="#2e7d32">완료·종료</text>
+  <text x="290" y="285" text-anchor="middle" font-size="8.5" fill="#8a6d00">"완료되는 실행" — 계속 떠 있지 않음</text>
+
+  <rect x="480" y="210" width="280" height="90" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="620" y="235" text-anchor="middle" font-size="10.5" fill="#c0392b" font-weight="700">CronJob 컨트롤러</text>
+  <text x="620" y="255" text-anchor="middle" font-size="9" fill="#c0392b">10초마다 일정 확인</text>
+  <text x="620" y="273" text-anchor="middle" font-size="9" fill="#c0392b">시간이 되면 새 Job 생성</text>
+  <text x="620" y="291" text-anchor="middle" font-size="8.5" fill="#c0392b">"매일 새벽 3시" 같은 반복 실행</text>
+
+  <text x="430" y="345" text-anchor="middle" font-size="12" fill="#555">"몇 개가 떠 있어야 하는가"를 정의하는 방식이 컨트롤러마다 다르다</text>
+  <text x="430" y="367" text-anchor="middle" font-size="11" fill="#777">그 정의에 맞춰 컨트롤 루프가 Pod를 만들거나, 지우거나, 완료 상태로 남긴다</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="820" height="320" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. Ingress vs Gateway API 구조 비교</text>
+
+  <text x="200" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#c0392b">Ingress</text>
+  <rect x="60" y="65" width="280" height="180" rx="8" fill="#fdecea" stroke="#c0392b" stroke-width="1.5"/>
+  <rect x="80" y="85" width="240" height="60" fill="#fff" stroke="#c0392b"/>
+  <text x="200" y="108" text-anchor="middle" font-size="9.5" fill="#c0392b">host / path / backend</text>
+  <text x="200" y="125" text-anchor="middle" font-size="8.5" fill="#c0392b">(표준 스펙, 매우 단순)</text>
+  <rect x="80" y="155" width="240" height="70" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="200" y="178" text-anchor="middle" font-size="9.5" fill="#8a6d00">annotation 잔뜩</text>
+  <text x="200" y="196" text-anchor="middle" font-size="8.5" fill="#8a6d00">(카나리, 헤더, 타임아웃...)</text>
+  <text x="200" y="212" text-anchor="middle" font-size="8" fill="#8a6d00">컨트롤러마다 문법이 다름</text>
+
+  <text x="620" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#2e7d32">Gateway API</text>
+  <rect x="480" y="65" width="280" height="180" rx="8" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <rect x="500" y="80" width="240" height="40" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="620" y="104" text-anchor="middle" font-size="9.5" fill="#1a73a8">GatewayClass</text>
+  <rect x="500" y="130" width="240" height="40" fill="#fff" stroke="#2e7d32"/>
+  <text x="620" y="154" text-anchor="middle" font-size="9.5" fill="#2e7d32">Gateway (리스너, TLS, 권한)</text>
+  <rect x="500" y="180" width="240" height="50" fill="#f3e8fb" stroke="#7b3fa0"/>
+  <text x="620" y="200" text-anchor="middle" font-size="9.5" fill="#7b3fa0">HTTPRoute / GRPCRoute</text>
+  <text x="620" y="218" text-anchor="middle" font-size="8.5" fill="#7b3fa0">헤더·가중치 라우팅 표준 내장</text>
+
+  <text x="410" y="270" text-anchor="middle" font-size="11.5" fill="#555">단일 오브젝트 + 비표준 확장 vs 계층화된 표준 리소스</text>
+  <text x="410" y="292" text-anchor="middle" font-size="10.5" fill="#777">Gateway API는 벤더 종속 없이 컨트롤러 간 이식성을 목표로 설계됐다</text>
+</svg>

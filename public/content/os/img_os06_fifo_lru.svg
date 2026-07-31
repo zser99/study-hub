@@ -1,0 +1,27 @@
+<svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="820" height="320" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. FIFO vs LRU — 같은 참조열, 다른 결과</text>
+  <text x="410" y="46" text-anchor="middle" font-size="11" fill="#777">프레임 3개, 페이지 참조열: 1, 2, 3, 1, 4</text>
+
+  <text x="40" y="80" font-size="12" font-weight="700" fill="#c0392b">FIFO</text>
+  <rect x="120" y="64" width="50" height="26" fill="#fdecea" stroke="#c0392b"/><text x="145" y="81" text-anchor="middle" font-size="9.5" fill="#c0392b">참조 1</text>
+  <rect x="180" y="64" width="50" height="26" fill="#fdecea" stroke="#c0392b"/><text x="205" y="81" text-anchor="middle" font-size="9.5" fill="#c0392b">참조 2</text>
+  <rect x="240" y="64" width="50" height="26" fill="#fdecea" stroke="#c0392b"/><text x="265" y="81" text-anchor="middle" font-size="9.5" fill="#c0392b">참조 3</text>
+  <rect x="300" y="64" width="50" height="26" fill="#eef7ee" stroke="#2e7d32"/><text x="325" y="81" text-anchor="middle" font-size="9.5" fill="#2e7d32">1 히트</text>
+  <rect x="360" y="64" width="60" height="26" fill="#fdecea" stroke="#c0392b"/><text x="390" y="81" text-anchor="middle" font-size="9.5" fill="#c0392b">4 → 1 교체</text>
+  <text x="470" y="81" font-size="10" fill="#555">폴트 4회, 히트 1회 — 가장 먼저 들어온 "1"이 밀려남</text>
+
+  <text x="40" y="150" font-size="12" font-weight="700" fill="#1a73a8">LRU</text>
+  <rect x="120" y="134" width="50" height="26" fill="#e8f1fb" stroke="#1a73a8"/><text x="145" y="151" text-anchor="middle" font-size="9.5" fill="#1a73a8">참조 1</text>
+  <rect x="180" y="134" width="50" height="26" fill="#e8f1fb" stroke="#1a73a8"/><text x="205" y="151" text-anchor="middle" font-size="9.5" fill="#1a73a8">참조 2</text>
+  <rect x="240" y="134" width="50" height="26" fill="#e8f1fb" stroke="#1a73a8"/><text x="265" y="151" text-anchor="middle" font-size="9.5" fill="#1a73a8">참조 3</text>
+  <rect x="300" y="134" width="50" height="26" fill="#eef7ee" stroke="#2e7d32"/><text x="325" y="151" text-anchor="middle" font-size="9.5" fill="#2e7d32">1 히트</text>
+  <rect x="360" y="134" width="60" height="26" fill="#fff7e6" stroke="#b8860b"/><text x="390" y="151" text-anchor="middle" font-size="9.5" fill="#8a6d00">4 → 2 교체</text>
+  <text x="470" y="151" font-size="10" fill="#555">폴트 4회, 히트 1회 — 최근 재사용된 "1" 대신 "2"가 밀려남</text>
+
+  <rect x="130" y="200" width="560" height="60" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="410" y="224" text-anchor="middle" font-size="12" fill="#8a6d00" font-weight="700">이 예시는 결과가 같지만, 참조 패턴에 따라 FIFO와 LRU의 성능 차이는 크게 벌어질 수 있다</text>
+  <text x="410" y="244" text-anchor="middle" font-size="10.5" fill="#8a6d00">LRU는 "최근 다시 쓰인 1"을 지켜주는 반면, FIFO는 "그냥 먼저 왔다"는 이유만으로 내보낸다</text>
+
+  <text x="410" y="295" text-anchor="middle" font-size="12" fill="#555">실제 리눅스는 정확한 LRU 대신, 참조 비트를 순회하는 Clock 알고리즘으로 근사한다</text>
+</svg>

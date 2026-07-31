@@ -1,0 +1,37 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowDf" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. Pod의 DNS 조회가 CoreDNS에 도달하는 과정</text>
+
+  <rect x="40" y="60" width="170" height="70" rx="8" fill="#f3e8fb" stroke="#7b3fa0"/>
+  <text x="125" y="85" text-anchor="middle" font-size="10.5" fill="#7b3fa0" font-weight="700">애플리케이션 Pod</text>
+  <text x="125" y="105" text-anchor="middle" font-size="9" fill="#7b3fa0">"user-service" 조회</text>
+
+  <rect x="260" y="60" width="200" height="70" rx="8" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="360" y="82" text-anchor="middle" font-size="10" fill="#8a6d00" font-weight="700">/etc/resolv.conf</text>
+  <text x="360" y="100" text-anchor="middle" font-size="9" fill="#8a6d00">nameserver = CoreDNS ClusterIP</text>
+  <text x="360" y="116" text-anchor="middle" font-size="8" fill="#8a6d00">kubelet이 Pod 생성 시 설정</text>
+
+  <rect x="510" y="60" width="150" height="70" rx="8" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="585" y="85" text-anchor="middle" font-size="10.5" fill="#1a73a8" font-weight="700">kube-proxy</text>
+  <text x="585" y="105" text-anchor="middle" font-size="9" fill="#1a73a8">DNAT (4편)</text>
+
+  <rect x="700" y="60" width="90" height="70" rx="8" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="745" y="90" text-anchor="middle" font-size="10" fill="#2e7d32" font-weight="700">CoreDNS</text>
+  <text x="745" y="108" text-anchor="middle" font-size="8.5" fill="#2e7d32">Pod</text>
+
+  <line x1="210" y1="95" x2="256" y2="95" stroke="#555" stroke-width="1.6" marker-end="url(#arrowDf)"/>
+  <line x1="460" y1="95" x2="506" y2="95" stroke="#555" stroke-width="1.6" marker-end="url(#arrowDf)"/>
+  <line x1="660" y1="95" x2="696" y2="95" stroke="#555" stroke-width="1.6" marker-end="url(#arrowDf)"/>
+
+  <rect x="130" y="180" width="560" height="90" rx="8" fill="#f9f9f9" stroke="#ccc"/>
+  <text x="410" y="205" text-anchor="middle" font-size="11" fill="#333" font-weight="700">CoreDNS는 API 서버를 감시해 Service/EndpointSlice 정보를 캐싱</text>
+  <text x="410" y="228" text-anchor="middle" font-size="10" fill="#555">(5편에서 다룬 EndpointSlice 데이터를 기반으로 응답 생성)</text>
+  <text x="410" y="250" text-anchor="middle" font-size="10" fill="#555">응답: Service ClusterIP 또는 Pod IP 목록</text>
+
+  <text x="410" y="310" text-anchor="middle" font-size="11" fill="#555">DNS 쿼리조차도 kube-proxy의 DNAT를 거쳐 CoreDNS Pod에 도달한다</text>
+</svg>

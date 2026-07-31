@@ -1,0 +1,39 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowSe" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. Service → EndpointSlice → Pod 연결 구조</text>
+
+  <rect x="40" y="70" width="180" height="70" rx="8" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+  <text x="130" y="95" text-anchor="middle" font-size="10.5" fill="#1a73a8" font-weight="700">Service</text>
+  <text x="130" y="113" text-anchor="middle" font-size="9" fill="#1a73a8">selector: app=my-app</text>
+  <text x="130" y="128" text-anchor="middle" font-size="8.5" fill="#1a73a8">(조건만 갖고 있음)</text>
+
+  <rect x="300" y="70" width="220" height="70" rx="8" fill="#fff7e6" stroke="#b8860b" stroke-width="1.5"/>
+  <text x="410" y="93" text-anchor="middle" font-size="10.5" fill="#8a6d00" font-weight="700">EndpointSlice</text>
+  <text x="410" y="112" text-anchor="middle" font-size="9" fill="#8a6d00">실제 Pod IP 목록 저장</text>
+  <text x="410" y="128" text-anchor="middle" font-size="8.5" fill="#8a6d00">(최대 100개씩 분할)</text>
+
+  <line x1="220" y1="105" x2="296" y2="105" stroke="#555" stroke-width="1.6" marker-end="url(#arrowSe)"/>
+  <text x="255" y="95" text-anchor="middle" font-size="8" fill="#555">컨트롤러가 채움</text>
+
+  <rect x="590" y="60" width="60" height="34" rx="4" fill="#f3e8fb" stroke="#7b3fa0"/><text x="620" y="82" text-anchor="middle" font-size="8.5" fill="#7b3fa0">Pod</text>
+  <rect x="590" y="100" width="60" height="34" rx="4" fill="#f3e8fb" stroke="#7b3fa0"/><text x="620" y="122" text-anchor="middle" font-size="8.5" fill="#7b3fa0">Pod</text>
+  <rect x="670" y="60" width="60" height="34" rx="4" fill="#f3e8fb" stroke="#7b3fa0"/><text x="700" y="82" text-anchor="middle" font-size="8.5" fill="#7b3fa0">Pod</text>
+  <rect x="670" y="100" width="60" height="34" rx="4" fill="#f3e8fb" stroke="#7b3fa0"/><text x="700" y="122" text-anchor="middle" font-size="8.5" fill="#7b3fa0">Pod</text>
+
+  <line x1="520" y1="90" x2="586" y2="80" stroke="#7b3fa0" stroke-width="1.4" marker-end="url(#arrowSe)"/>
+  <line x1="520" y1="110" x2="586" y2="115" stroke="#7b3fa0" stroke-width="1.4" marker-end="url(#arrowSe)"/>
+
+  <rect x="150" y="200" width="500" height="90" rx="8" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="400" y="228" text-anchor="middle" font-size="11" fill="#2e7d32" font-weight="700">kube-proxy</text>
+  <text x="400" y="250" text-anchor="middle" font-size="9.5" fill="#2e7d32">EndpointSlice를 읽어서</text>
+  <text x="400" y="268" text-anchor="middle" font-size="9.5" fill="#2e7d32">각 노드에 DNAT 규칙 생성 (4편)</text>
+
+  <line x1="410" y1="140" x2="400" y2="196" stroke="#2e7d32" stroke-width="1.6" marker-end="url(#arrowSe)"/>
+
+  <text x="410" y="320" text-anchor="middle" font-size="11" fill="#555">Service는 "조건"만, IP 목록은 EndpointSlice에 — kube-proxy는 후자를 읽는다</text>
+</svg>
