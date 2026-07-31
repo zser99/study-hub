@@ -252,6 +252,17 @@ h1, h2, h3, h4 {
   color: var(--text-h);
 }
 
+.home-encouragement {
+  margin: 28px 0 0;
+  padding: 16px 20px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
 .series-card-count {
   font-size: 13px;
   color: var(--text-muted);

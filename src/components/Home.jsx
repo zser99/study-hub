@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import posts from '../data/posts.json'
+import encouragements from '../data/encouragements.js'
 
 function groupBySeries() {
   const groups = {}
@@ -14,6 +16,10 @@ const grouped = groupBySeries()
 const seriesOrder = [...new Set(posts.map((p) => p.series))]
 
 function Home() {
+  const [message] = useState(
+    () => encouragements[Math.floor(Math.random() * encouragements.length)],
+  )
+
   return (
     <div className="home">
       <header className="home-header">
@@ -38,6 +44,7 @@ function Home() {
           )
         })}
       </div>
+      <p className="home-encouragement">{message}</p>
     </div>
   )
 }
