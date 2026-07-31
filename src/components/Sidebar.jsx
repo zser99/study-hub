@@ -20,7 +20,7 @@ function Sidebar() {
   const [query, setQuery] = useState('')
   const [openSeries, setOpenSeries] = useState(() => {
     const activePost = posts.find((p) => p.id === activeId)
-    return new Set(activePost ? [activePost.series] : seriesOrder)
+    return new Set(activePost ? [activePost.series] : [])
   })
 
   const trimmedQuery = query.trim().toLowerCase()
