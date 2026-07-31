@@ -81,9 +81,35 @@ h1, h2, h3, h4 {
   font-size: 18px;
   font-weight: 700;
   color: var(--text-h);
-  padding: 0 20px 20px;
+  padding: 0 20px 16px;
+}
+
+.sidebar-search {
+  padding: 0 20px 16px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 8px;
+}
+
+.sidebar-search input {
+  width: 100%;
+  font: inherit;
+  font-size: 13.5px;
+  color: var(--text-h);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.sidebar-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.sidebar-search-empty {
+  padding: 8px 20px;
+  font-size: 13px;
+  color: var(--text-muted);
 }
 
 .sidebar-nav {
@@ -113,6 +139,12 @@ h1, h2, h3, h4 {
 
 .series-header:hover {
   background: var(--code-bg);
+}
+
+.series-header:disabled,
+.series-header:disabled:hover {
+  cursor: default;
+  background: none;
 }
 
 .series-dot {
