@@ -1,4 +1,13 @@
+@font-face {
+  font-family: 'GeuriunXGukhanbakDaheul';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607161334@x/x/GriunXHangeul_DAHL-Rg.woff2')
+    format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
+  --font-display: 'GeuriunXGukhanbakDaheul', var(--sans);
   --text: #4b5061;
   --text-h: #12141c;
   --text-muted: #8a8f9e;
@@ -134,8 +143,9 @@ h1, h2, h3, h4 {
 
 .sidebar-brand {
   display: block;
-  font-size: 18px;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
   color: var(--text-h);
   padding: 0 20px 16px;
 }
@@ -270,7 +280,9 @@ h1, h2, h3, h4 {
 }
 
 .home-header h1 {
-  font-size: 34px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 40px;
   margin: 0 0 8px;
 }
 
@@ -315,8 +327,9 @@ h1, h2, h3, h4 {
   border-radius: 0 8px 8px 0;
   background: var(--accent-bg);
   color: var(--text-h);
-  font-size: 14.5px;
-  line-height: 1.6;
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 1.7;
 }
 
 .series-card-count {
