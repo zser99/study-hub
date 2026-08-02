@@ -17,7 +17,7 @@ function groupBySeries() {
 
 const grouped = groupBySeries()
 
-function Sidebar() {
+function Sidebar({ isOpen, onNavigate }) {
   const location = useLocation()
   const match = location.pathname.match(POST_PATH_RE)
   const activeId = match ? decodeURIComponent(match[1]) : undefined
@@ -54,8 +54,10 @@ function Sidebar() {
   }
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar-scroll">
+    <aside className={`sidebar ${isOpen ? 'mobile-open' : ''}`}>
+      <div className="sidebar-scroll" onClick={(e) => {
+        if (e.target.closest('a')) onNavigate?.()
+      }}>
         <Link to="/" className="sidebar-brand">
           Study Hub
         </Link>
