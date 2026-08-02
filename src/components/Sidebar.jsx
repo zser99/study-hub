@@ -17,7 +17,7 @@ function groupBySeries() {
 
 const grouped = groupBySeries()
 
-function Sidebar({ isOpen, onNavigate }) {
+function Sidebar({ isOpen: mobileOpen, onNavigate, theme, onToggleTheme }) {
   const location = useLocation()
   const match = location.pathname.match(POST_PATH_RE)
   const activeId = match ? decodeURIComponent(match[1]) : undefined
@@ -54,13 +54,23 @@ function Sidebar({ isOpen, onNavigate }) {
   }
 
   return (
-    <aside className={`sidebar ${isOpen ? 'mobile-open' : ''}`}>
+    <aside className={`sidebar ${mobileOpen ? 'mobile-open' : ''}`}>
       <div className="sidebar-scroll" onClick={(e) => {
         if (e.target.closest('a')) onNavigate?.()
       }}>
-        <Link to="/" className="sidebar-brand">
-          Study Hub
-        </Link>
+        <div className="sidebar-brand-row">
+          <Link to="/" className="sidebar-brand">
+            Study Hub
+          </Link>
+          <button
+            type="button"
+            className="theme-toggle"
+            aria-label={theme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'}
+            onClick={onToggleTheme}
+          >
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
+        </div>
         <div className="sidebar-search">
           <input
             type="text"
