@@ -399,6 +399,29 @@ h1, h2, h3, h4 {
   line-height: 1.7;
 }
 
+.home-oss {
+  margin: 40px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.home-oss p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.home-oss-link {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.home-oss-link:hover {
+  text-decoration: underline;
+}
+
 .series-card-count {
   font-size: 13px;
   color: var(--text-muted);

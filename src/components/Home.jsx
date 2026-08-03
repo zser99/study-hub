@@ -63,6 +63,21 @@ function Home({ readIds }) {
         })}
       </div>
       <p className="home-encouragement">{message}</p>
+
+      <footer className="home-oss">
+        <p>
+          Study Hub는 오픈소스 프로젝트입니다. 오탈자 수정부터 새 글·시리즈 추가, 기능
+          개선까지 어떤 형태의 기여도 환영합니다.
+        </p>
+        <a
+          href="https://github.com/rlaxoehd4234/study-hub"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="home-oss-link"
+        >
+          GitHub에서 기여하기 &rarr;
+        </a>
+      </footer>
     </div>
   )
 }
