@@ -3,13 +3,16 @@ import { Routes, Route, Link } from 'react-router-dom'
 import Sidebar from './components/Sidebar.jsx'
 import Home from './components/Home.jsx'
 import PostView from './components/PostView.jsx'
+import QuizPage from './components/QuizPage.jsx'
 import { useTheme } from './hooks/useTheme.js'
 import { useReadPosts } from './hooks/useReadPosts.js'
+import { useQuizScores } from './hooks/useQuizScores.js'
 
 function App() {
   const [navOpen, setNavOpen] = useState(false)
   const [theme, toggleTheme] = useTheme()
   const [readIds, markRead] = useReadPosts()
+  const [quizScores, saveQuizScore] = useQuizScores()
 
   return (
     <div className="layout">
@@ -51,8 +54,9 @@ function App() {
 
       <main className="content">
         <Routes>
-          <Route path="/" element={<Home readIds={readIds} />} />
+          <Route path="/" element={<Home readIds={readIds} quizScores={quizScores} />} />
           <Route path="/post/:id" element={<PostView onRead={markRead} />} />
+          <Route path="/quiz/:series" element={<QuizPage onSubmitScore={saveQuizScore} />} />
         </Routes>
       </main>
     </div>
