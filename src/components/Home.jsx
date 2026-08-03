@@ -16,7 +16,7 @@ function groupBySeries() {
 const grouped = groupBySeries()
 const seriesOrder = [...new Set(posts.map((p) => p.series))]
 
-function Home({ readIds }) {
+function Home({ readIds, quizScores }) {
   const [message] = useState(
     () => encouragements[Math.floor(Math.random() * encouragements.length)],
   )
@@ -40,6 +40,7 @@ function Home({ readIds }) {
           const percent = Math.round((readCount / seriesPosts.length) * 100)
           const nextPost = seriesPosts.find((p) => !readIds?.has(p.id)) ?? seriesPosts[0]
           const hasQuiz = Boolean(quizzes[series])
+          const quizResult = quizScores?.[series]
           return (
             <div
               key={series}
@@ -63,7 +64,9 @@ function Home({ readIds }) {
               </Link>
               {hasQuiz && (
                 <Link to={`/quiz/${series}`} className="series-card-quiz">
-                  📝 쪽지시험 보기
+                  {quizResult
+                    ? `📝 쪽지시험 다시 풀기 · 최고 ${quizResult.best}/${quizResult.total}`
+                    : '📝 쪽지시험 보기'}
                 </Link>
               )}
             </div>

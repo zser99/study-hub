@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import quizzes from '../data/quizzes.js'
 import posts from '../data/posts.json'
 
-function QuizPage() {
+function QuizPage({ onSubmitScore }) {
   const { series } = useParams()
   const questions = quizzes[series]
   const meta = posts.find((p) => p.series === series)
@@ -33,6 +33,12 @@ function QuizPage() {
   const score = submitted
     ? answers.filter((a, i) => a === questions[i].answerIndex).length
     : 0
+
+  const submit = () => {
+    const finalScore = answers.filter((a, i) => a === questions[i].answerIndex).length
+    setSubmitted(true)
+    onSubmitScore?.(series, finalScore, questions.length)
+  }
 
   const retry = () => {
     setAnswers(questions.map(() => null))
@@ -106,7 +112,7 @@ function QuizPage() {
             type="button"
             className="quiz-submit"
             disabled={!allAnswered}
-            onClick={() => setSubmitted(true)}
+            onClick={submit}
           >
             채점하기
           </button>
