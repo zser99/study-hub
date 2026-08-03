@@ -12,7 +12,13 @@ const seriesMeta = {
   spring: { label: 'Spring', color: '#1a73a8', order: 1 },
   network: { label: 'Network', color: '#2e7d32', order: 2 },
   os: { label: '운영체제', color: '#b8860b', order: 3 },
-  k8s: { label: 'Kubernetes', color: '#7b3fa0', order: 4 }
+  k8s: { label: 'Kubernetes', color: '#7b3fa0', order: 4 },
+  linux: { label: 'Linux', color: '#dd4814', order: 5 },
+  docker: { label: 'Docker', color: '#2496ed', order: 6 },
+  db: { label: '데이터베이스', color: '#0f766e', order: 7 },
+  dataai: { label: '데이터와 AI', color: '#db2777', order: 8 },
+  agilemsa: { label: '애자일 & MSA', color: '#4338ca', order: 9 },
+  frontend: { label: '프론트엔드', color: '#d97706', order: 10 }
 }
 
 function extractTitle(mdText, fallback) {

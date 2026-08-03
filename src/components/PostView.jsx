@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import posts from '../data/posts.json'
 
 function PostView() {
@@ -62,11 +63,13 @@ function PostView() {
         <div className="markdown-body">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
             components={{
               img: ({ src, alt }) => {
-                const resolvedSrc = src?.startsWith('./')
-                  ? `${import.meta.env.BASE_URL}${seriesDir}/${src.slice(2)}`
-                  : src
+                const isAbsolute = /^(https?:|data:)/.test(src ?? '') || src?.startsWith('/')
+                const resolvedSrc = isAbsolute
+                  ? src
+                  : `${import.meta.env.BASE_URL}${seriesDir}/${src.replace(/^\.\//, '')}`
                 return <img src={resolvedSrc} alt={alt} loading="lazy" />
               },
             }}
