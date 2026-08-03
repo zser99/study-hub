@@ -4,9 +4,11 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import posts from '../data/posts.json'
+import { useScrollProgress } from '../hooks/useScrollProgress.js'
 
 function PostView({ onRead }) {
   const { id } = useParams()
+  const scrollPercent = useScrollProgress()
   const [text, setText] = useState('')
   const [status, setStatus] = useState('loading')
 
@@ -48,6 +50,9 @@ function PostView({ onRead }) {
 
   return (
     <article className="post-view">
+      <div className="reading-progress-track" aria-hidden="true">
+        <div className="reading-progress-fill" style={{ width: `${scrollPercent}%` }} />
+      </div>
       <div className="post-meta">
         <span className="post-series-badge" style={{ '--series-color': post.seriesColor }}>
           {post.seriesLabel}
