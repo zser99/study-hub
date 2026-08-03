@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import posts from '../data/posts.json'
 import encouragements from '../data/encouragements.js'
+import quizzes from '../data/quizzes.js'
 
 function groupBySeries() {
   const groups = {}
@@ -38,27 +39,34 @@ function Home({ readIds }) {
           const readCount = seriesPosts.filter((p) => readIds?.has(p.id)).length
           const percent = Math.round((readCount / seriesPosts.length) * 100)
           const nextPost = seriesPosts.find((p) => !readIds?.has(p.id)) ?? seriesPosts[0]
+          const hasQuiz = Boolean(quizzes[series])
           return (
-            <Link
+            <div
               key={series}
-              to={`/post/${nextPost.id}`}
               className="series-card"
               style={{ '--series-color': meta.seriesColor }}
             >
-              <span className="series-card-label">{meta.seriesLabel}</span>
-              <span className="series-card-count">
-                {readCount}/{seriesPosts.length}편 읽음
-              </span>
-              <span className="series-card-progress">
-                <span
-                  className="series-card-progress-fill"
-                  style={{ width: `${percent}%` }}
-                />
-              </span>
-              <span className="series-card-cta">
-                {readCount === 0 ? '읽기 시작' : readCount === seriesPosts.length ? '다시 보기' : '이어보기'} &rarr;
-              </span>
-            </Link>
+              <Link to={`/post/${nextPost.id}`} className="series-card-main">
+                <span className="series-card-label">{meta.seriesLabel}</span>
+                <span className="series-card-count">
+                  {readCount}/{seriesPosts.length}편 읽음
+                </span>
+                <span className="series-card-progress">
+                  <span
+                    className="series-card-progress-fill"
+                    style={{ width: `${percent}%` }}
+                  />
+                </span>
+                <span className="series-card-cta">
+                  {readCount === 0 ? '읽기 시작' : readCount === seriesPosts.length ? '다시 보기' : '이어보기'} &rarr;
+                </span>
+              </Link>
+              {hasQuiz && (
+                <Link to={`/quiz/${series}`} className="series-card-quiz">
+                  📝 쪽지시험 보기
+                </Link>
+              )}
+            </div>
           )
         })}
       </div>

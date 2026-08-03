@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import Sidebar from './components/Sidebar.jsx'
 import Home from './components/Home.jsx'
 import PostView from './components/PostView.jsx'
+import QuizPage from './components/QuizPage.jsx'
 import { useTheme } from './hooks/useTheme.js'
 import { useReadPosts } from './hooks/useReadPosts.js'
 
@@ -53,6 +54,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home readIds={readIds} />} />
           <Route path="/post/:id" element={<PostView onRead={markRead} />} />
+          <Route path="/quiz/:series" element={<QuizPage />} />
         </Routes>
       </main>
     </div>
