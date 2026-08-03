@@ -77,6 +77,9 @@ function Home({ readIds }) {
         >
           GitHub에서 기여하기 &rarr;
         </a>
+        <p className="home-credits">
+          만든 사람들 — 판교 9반 YYM · JSY · JEH · KSH · PJM · KTD
+        </p>
       </footer>
     </div>
   )
