@@ -4,10 +4,12 @@ import Sidebar from './components/Sidebar.jsx'
 import Home from './components/Home.jsx'
 import PostView from './components/PostView.jsx'
 import { useTheme } from './hooks/useTheme.js'
+import { useReadPosts } from './hooks/useReadPosts.js'
 
 function App() {
   const [navOpen, setNavOpen] = useState(false)
   const [theme, toggleTheme] = useTheme()
+  const [readIds, markRead] = useReadPosts()
 
   return (
     <div className="layout">
@@ -44,12 +46,13 @@ function App() {
         onNavigate={() => setNavOpen(false)}
         theme={theme}
         onToggleTheme={toggleTheme}
+        readIds={readIds}
       />
 
       <main className="content">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/post/:id" element={<PostView />} />
+          <Route path="/" element={<Home readIds={readIds} />} />
+          <Route path="/post/:id" element={<PostView onRead={markRead} />} />
         </Routes>
       </main>
     </div>

@@ -15,31 +15,49 @@ function groupBySeries() {
 const grouped = groupBySeries()
 const seriesOrder = [...new Set(posts.map((p) => p.series))]
 
-function Home() {
+function Home({ readIds }) {
   const [message] = useState(
     () => encouragements[Math.floor(Math.random() * encouragements.length)],
   )
+
+  const totalRead = posts.filter((p) => readIds?.has(p.id)).length
 
   return (
     <div className="home">
       <header className="home-header">
         <h1>Study Hub</h1>
-        <p>Spring · Network · 운영체제 · Kubernetes 네트워킹 — 총 {posts.length}편</p>
+        <p>
+          {seriesOrder.length}개 시리즈, 총 {posts.length}편
+          {totalRead > 0 ? ` · ${totalRead}편 읽음` : ''}
+        </p>
       </header>
       <div className="series-cards">
         {seriesOrder.map((series) => {
           const seriesPosts = grouped[series]
           const meta = seriesPosts[0]
+          const readCount = seriesPosts.filter((p) => readIds?.has(p.id)).length
+          const percent = Math.round((readCount / seriesPosts.length) * 100)
+          const nextPost = seriesPosts.find((p) => !readIds?.has(p.id)) ?? seriesPosts[0]
           return (
             <Link
               key={series}
-              to={`/post/${seriesPosts[0].id}`}
+              to={`/post/${nextPost.id}`}
               className="series-card"
               style={{ '--series-color': meta.seriesColor }}
             >
               <span className="series-card-label">{meta.seriesLabel}</span>
-              <span className="series-card-count">{seriesPosts.length}편</span>
-              <span className="series-card-cta">읽기 시작 &rarr;</span>
+              <span className="series-card-count">
+                {readCount}/{seriesPosts.length}편 읽음
+              </span>
+              <span className="series-card-progress">
+                <span
+                  className="series-card-progress-fill"
+                  style={{ width: `${percent}%` }}
+                />
+              </span>
+              <span className="series-card-cta">
+                {readCount === 0 ? '읽기 시작' : readCount === seriesPosts.length ? '다시 보기' : '이어보기'} &rarr;
+              </span>
             </Link>
           )
         })}

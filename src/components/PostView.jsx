@@ -5,7 +5,7 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import posts from '../data/posts.json'
 
-function PostView() {
+function PostView({ onRead }) {
   const { id } = useParams()
   const [text, setText] = useState('')
   const [status, setStatus] = useState('loading')
@@ -29,6 +29,7 @@ function PostView() {
       .then((md) => {
         setText(md)
         setStatus('ready')
+        onRead?.(post.id)
       })
       .catch(() => setStatus('error'))
     window.scrollTo(0, 0)

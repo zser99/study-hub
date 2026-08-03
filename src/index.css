@@ -311,6 +311,7 @@ h1, h2, h3, h4 {
   font-size: 13.5px;
   color: var(--text);
   line-height: 1.4;
+  position: relative;
 }
 
 .series-post-link:hover {
@@ -322,6 +323,14 @@ h1, h2, h3, h4 {
   background: var(--accent-bg);
   color: var(--accent);
   font-weight: 600;
+}
+
+.series-post-check {
+  position: absolute;
+  left: 20px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .content {
@@ -393,6 +402,23 @@ h1, h2, h3, h4 {
 .series-card-count {
   font-size: 13px;
   color: var(--text-muted);
+}
+
+.series-card-progress {
+  display: block;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--code-bg);
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.series-card-progress-fill {
+  display: block;
+  height: 100%;
+  background: var(--series-color, var(--accent));
+  border-radius: 999px;
+  transition: width 0.2s ease;
 }
 
 .series-card-cta {

@@ -17,7 +17,7 @@ function groupBySeries() {
 
 const grouped = groupBySeries()
 
-function Sidebar({ isOpen: mobileOpen, onNavigate, theme, onToggleTheme }) {
+function Sidebar({ isOpen: mobileOpen, onNavigate, theme, onToggleTheme, readIds }) {
   const location = useLocation()
   const match = location.pathname.match(POST_PATH_RE)
   const activeId = match ? decodeURIComponent(match[1]) : undefined
@@ -88,6 +88,7 @@ function Sidebar({ isOpen: mobileOpen, onNavigate, theme, onToggleTheme }) {
             const seriesPosts = isSearching ? filteredGrouped[series] : grouped[series]
             const meta = grouped[series][0]
             const isOpen = isSearching || openSeries.has(series)
+            const readCount = grouped[series].filter((p) => readIds?.has(p.id)).length
             return (
               <div key={series} className="series-group">
                 <button
@@ -99,7 +100,9 @@ function Sidebar({ isOpen: mobileOpen, onNavigate, theme, onToggleTheme }) {
                 >
                   <span className="series-dot" />
                   <span className="series-label">{meta.seriesLabel}</span>
-                  <span className="series-count">{seriesPosts.length}</span>
+                  <span className="series-count">
+                    {readCount}/{grouped[series].length}
+                  </span>
                   {!isSearching && (
                     <span className={`series-chevron ${isOpen ? 'open' : ''}`}>
                       &#9662;
@@ -114,8 +117,11 @@ function Sidebar({ isOpen: mobileOpen, onNavigate, theme, onToggleTheme }) {
                           to={`/post/${post.id}`}
                           className={`series-post-link ${
                             post.id === activeId ? 'active' : ''
-                          }`}
+                          } ${readIds?.has(post.id) ? 'read' : ''}`}
                         >
+                          <span className="series-post-check">
+                            {readIds?.has(post.id) ? '✓' : ''}
+                          </span>
                           {post.indexInSeries}. {post.title.replace(/^\[[^\]]+\]\s*/, '')}
                         </Link>
                       </li>
