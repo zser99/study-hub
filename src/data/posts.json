@@ -1032,5 +1032,126 @@
     "slug": "04_데이터바인딩",
     "title": "단방향 vs 양방향 데이터 바인딩: React와 Vue는 왜 다르게 설계됐나",
     "path": "content/frontend/04_데이터바인딩.md"
+  },
+  {
+    "id": "java-00_커리큘럼",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 1,
+    "slug": "00_커리큘럼",
+    "title": "자바 기본 10강 커리큘럼",
+    "path": "content/java/00_커리큘럼.md"
+  },
+  {
+    "id": "java-01_클래스와_데이터",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 2,
+    "slug": "01_클래스와_데이터",
+    "title": "1강. 클래스와 데이터",
+    "path": "content/java/01_클래스와_데이터.md"
+  },
+  {
+    "id": "java-02_기본형과_참조형",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 3,
+    "slug": "02_기본형과_참조형",
+    "title": "2강. 기본형과 참조형",
+    "path": "content/java/02_기본형과_참조형.md"
+  },
+  {
+    "id": "java-03_객체_지향_프로그래밍",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 4,
+    "slug": "03_객체_지향_프로그래밍",
+    "title": "3강. 객체 지향 프로그래밍",
+    "path": "content/java/03_객체_지향_프로그래밍.md"
+  },
+  {
+    "id": "java-04_생성자",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 5,
+    "slug": "04_생성자",
+    "title": "4강. 생성자",
+    "path": "content/java/04_생성자.md"
+  },
+  {
+    "id": "java-05_패키지와_접근_제어자",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 6,
+    "slug": "05_패키지와_접근_제어자",
+    "title": "5강. 패키지와 접근 제어자",
+    "path": "content/java/05_패키지와_접근_제어자.md"
+  },
+  {
+    "id": "java-06_메모리구조와_static_final",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 7,
+    "slug": "06_메모리구조와_static_final",
+    "title": "6강. 자바 메모리 구조와 static, final",
+    "path": "content/java/06_메모리구조와_static_final.md"
+  },
+  {
+    "id": "java-07_상속",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 8,
+    "slug": "07_상속",
+    "title": "7강. 상속",
+    "path": "content/java/07_상속.md"
+  },
+  {
+    "id": "java-08_다형성1_캐스팅과_오버라이딩",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 9,
+    "slug": "08_다형성1_캐스팅과_오버라이딩",
+    "title": "8강. 다형성 1 - 캐스팅과 오버라이딩",
+    "path": "content/java/08_다형성1_캐스팅과_오버라이딩.md"
+  },
+  {
+    "id": "java-09_다형성2_추상클래스와_인터페이스",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 10,
+    "slug": "09_다형성2_추상클래스와_인터페이스",
+    "title": "9강. 다형성 2 - 추상 클래스와 인터페이스",
+    "path": "content/java/09_다형성2_추상클래스와_인터페이스.md"
+  },
+  {
+    "id": "java-10_다형성과_설계_그리고_다음_로드맵",
+    "series": "java",
+    "seriesLabel": "Java",
+    "seriesColor": "#c2410c",
+    "seriesOrder": 11,
+    "indexInSeries": 11,
+    "slug": "10_다형성과_설계_그리고_다음_로드맵",
+    "title": "10강. 다형성과 설계, 그리고 다음 학습 로드맵",
+    "path": "content/java/10_다형성과_설계_그리고_다음_로드맵.md"
   }
 ]

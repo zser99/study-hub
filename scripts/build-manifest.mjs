@@ -18,7 +18,8 @@ const seriesMeta = {
   db: { label: '데이터베이스', color: '#0f766e', order: 7 },
   dataai: { label: '데이터와 AI', color: '#db2777', order: 8 },
   agilemsa: { label: '애자일 & MSA', color: '#4338ca', order: 9 },
-  frontend: { label: '프론트엔드', color: '#d97706', order: 10 }
+  frontend: { label: '프론트엔드', color: '#d97706', order: 10 },
+  java: { label: 'Java', color: '#c2410c', order: 11 }
 }
 
 function extractTitle(mdText, fallback) {
