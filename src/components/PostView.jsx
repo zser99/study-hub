@@ -1,10 +1,13 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import posts from '../data/posts.json'
 import { useScrollProgress } from '../hooks/useScrollProgress.js'
+
+const remarkPlugins = [remarkGfm]
+const rehypePlugins = [rehypeRaw]
 
 function PostView({ onRead }) {
   const { id } = useParams()
@@ -37,6 +40,23 @@ function PostView({ onRead }) {
     window.scrollTo(0, 0)
   }, [post])
 
+  const seriesDir = post ? post.path.slice(0, post.path.lastIndexOf('/')) : ''
+
+  // 렌더마다 새 함수를 넘기면 React가 <img>를 매번 언마운트/재마운트해
+  // 스크롤 중 이미지가 다시 로드되며 깜빡인다. seriesDir 기준으로 고정한다.
+  const markdownComponents = useMemo(
+    () => ({
+      img: ({ src, alt }) => {
+        const isAbsolute = /^(https?:|data:)/.test(src ?? '') || src?.startsWith('/')
+        const resolvedSrc = isAbsolute
+          ? src
+          : `${import.meta.env.BASE_URL}${seriesDir}/${src.replace(/^\.\//, '')}`
+        return <img src={resolvedSrc} alt={alt} loading="lazy" />
+      },
+    }),
+    [seriesDir],
+  )
+
   if (!post) {
     return (
       <div className="post-view">
@@ -45,8 +65,6 @@ function PostView({ onRead }) {
       </div>
     )
   }
-
-  const seriesDir = post.path.slice(0, post.path.lastIndexOf('/'))
 
   return (
     <article className="post-view">
@@ -68,17 +86,9 @@ function PostView({ onRead }) {
       {status === 'ready' && (
         <div className="markdown-body">
           <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw]}
-            components={{
-              img: ({ src, alt }) => {
-                const isAbsolute = /^(https?:|data:)/.test(src ?? '') || src?.startsWith('/')
-                const resolvedSrc = isAbsolute
-                  ? src
-                  : `${import.meta.env.BASE_URL}${seriesDir}/${src.replace(/^\.\//, '')}`
-                return <img src={resolvedSrc} alt={alt} loading="lazy" />
-              },
-            }}
+            remarkPlugins={remarkPlugins}
+            rehypePlugins={rehypePlugins}
+            components={markdownComponents}
           >
             {text}
           </ReactMarkdown>
