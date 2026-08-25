@@ -1,0 +1,55 @@
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="900" height="300" fill="#ffffff"/>
+  <text x="450" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. 캡슐화 과정 (송신 측, 위→아래로 진행)</text>
+
+  <g font-size="11.5">
+    <rect x="40" y="55" width="800" height="30" rx="4" fill="#eef7ee" stroke="#2e7d32"/>
+    <text x="440" y="75" text-anchor="middle" fill="#2e7d32">데이터 (HTTP 요청)</text>
+    <text x="855" y="75" font-size="10.5" fill="#2e7d32">응용</text>
+
+    <rect x="40" y="100" width="60" height="30" rx="4" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="70" y="120" text-anchor="middle" fill="#8a6d00" font-size="10.5">TCP</text>
+    <rect x="100" y="100" width="740" height="30" fill="#eef7ee" stroke="#2e7d32"/>
+    <text x="470" y="120" text-anchor="middle" fill="#2e7d32">데이터</text>
+    <text x="855" y="120" font-size="10.5" fill="#8a6d00">세그먼트</text>
+
+    <rect x="40" y="145" width="60" height="30" rx="4" fill="#fdecea" stroke="#c0392b"/>
+    <text x="70" y="165" text-anchor="middle" fill="#c0392b" font-size="10.5">IP</text>
+    <rect x="100" y="145" width="60" height="30" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="130" y="165" text-anchor="middle" fill="#8a6d00" font-size="10.5">TCP</text>
+    <rect x="160" y="145" width="680" height="30" fill="#eef7ee" stroke="#2e7d32"/>
+    <text x="500" y="165" text-anchor="middle" fill="#2e7d32">데이터</text>
+    <text x="855" y="165" font-size="10.5" fill="#c0392b">패킷</text>
+
+    <rect x="40" y="190" width="60" height="30" rx="4" fill="#f3e8fb" stroke="#7b3fa0"/>
+    <text x="70" y="210" text-anchor="middle" fill="#7b3fa0" font-size="10.5">Ethernet</text>
+    <rect x="100" y="190" width="60" height="30" fill="#fdecea" stroke="#c0392b"/>
+    <text x="130" y="210" text-anchor="middle" fill="#c0392b" font-size="10.5">IP</text>
+    <rect x="160" y="190" width="60" height="30" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="190" y="210" text-anchor="middle" fill="#8a6d00" font-size="10.5">TCP</text>
+    <rect x="220" y="190" width="580" height="30" fill="#eef7ee" stroke="#2e7d32"/>
+    <text x="510" y="210" text-anchor="middle" fill="#2e7d32">데이터</text>
+    <rect x="800" y="190" width="40" height="30" fill="#f3e8fb" stroke="#7b3fa0"/>
+    <text x="820" y="210" text-anchor="middle" fill="#7b3fa0" font-size="9.5">FCS</text>
+    <text x="865" y="210" font-size="10.5" fill="#7b3fa0">프레임</text>
+
+    <rect x="40" y="235" width="800" height="24" rx="4" fill="#333"/>
+    <text x="440" y="252" text-anchor="middle" fill="#fff" font-size="10.5">0101101100101011... (비트 스트림)</text>
+    <text x="855" y="252" font-size="10.5" fill="#333">비트</text>
+  </g>
+
+  <g stroke="#999" stroke-width="1.5" fill="none" marker-end="url(#arrowE)">
+    <line x1="440" y1="85" x2="440" y2="98"/>
+    <line x1="440" y1="130" x2="440" y2="143"/>
+    <line x1="440" y1="175" x2="440" y2="188"/>
+    <line x1="440" y1="220" x2="440" y2="233"/>
+  </g>
+
+  <text x="450" y="280" text-anchor="middle" font-size="12" fill="#555">계층을 내려갈 때마다 헤더(때로는 트레일러)가 하나씩 덧붙는다 → 수신 측에서는 역순으로 벗겨낸다</text>
+
+  <defs>
+    <marker id="arrowE" markerWidth="8" markerHeight="8" refX="4" refY="6" orient="auto">
+      <path d="M0,0 L8,0 L4,8 Z" fill="#999"/>
+    </marker>
+  </defs>
+</svg>

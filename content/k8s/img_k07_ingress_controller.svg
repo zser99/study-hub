@@ -1,0 +1,31 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowIc" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. Ingress 리소스와 Ingress Controller</text>
+
+  <rect x="60" y="60" width="260" height="90" rx="8" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+  <text x="190" y="90" text-anchor="middle" font-size="11" fill="#1a73a8" font-weight="700">Ingress 오브젝트</text>
+  <text x="190" y="112" text-anchor="middle" font-size="9.5" fill="#1a73a8">"이런 규칙으로 라우팅하고 싶다"</text>
+  <text x="190" y="130" text-anchor="middle" font-size="9" fill="#1a73a8">— 선언일 뿐, 그 자체로는 동작 안 함</text>
+
+  <text x="410" y="105" text-anchor="middle" font-size="20" fill="#c0392b">✕</text>
+  <text x="410" y="130" text-anchor="middle" font-size="9" fill="#c0392b">컨트롤러 없이는</text>
+  <text x="410" y="145" text-anchor="middle" font-size="9" fill="#c0392b">아무 효과 없음</text>
+
+  <rect x="500" y="60" width="260" height="90" rx="8" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="630" y="90" text-anchor="middle" font-size="11" fill="#2e7d32" font-weight="700">Ingress Controller</text>
+  <text x="630" y="112" text-anchor="middle" font-size="9.5" fill="#2e7d32">별도로 설치해야 하는 실행 주체</text>
+  <text x="630" y="130" text-anchor="middle" font-size="9" fill="#2e7d32">(리버스 프록시 설정을 실제로 적용)</text>
+
+  <rect x="200" y="190" width="420" height="110" rx="8" fill="#fdecea" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="410" y="215" text-anchor="middle" font-size="11.5" fill="#c0392b" font-weight="700">2026년 현재: Ingress-NGINX 은퇴 절차 진행 중</text>
+  <text x="410" y="238" text-anchor="middle" font-size="9.5" fill="#c0392b">2025년 11월 발표 → 2026년 3월까지 best-effort 유지보수</text>
+  <text x="410" y="258" text-anchor="middle" font-size="9.5" fill="#c0392b">이후 신규 릴리스·보안 패치 중단 (기존 배포는 계속 동작)</text>
+  <text x="410" y="280" text-anchor="middle" font-size="10" fill="#c0392b" font-weight="700">→ 공식 권장: Gateway API로 전환</text>
+
+  <text x="410" y="325" text-anchor="middle" font-size="11" fill="#555">Ingress 리소스를 만드는 것과 그걸 실행할 컨트롤러를 두는 것은 별개다</text>
+</svg>

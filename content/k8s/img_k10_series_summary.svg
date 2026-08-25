@@ -1,0 +1,47 @@
+<svg viewBox="0 0 880 460" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="880" height="460" fill="#ffffff"/>
+  <text x="440" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. 쿠버네티스 네트워킹 시리즈 전체 개념 지도 (1~10편)</text>
+
+  <rect x="30" y="55" width="250" height="60" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="155" y="78" text-anchor="middle" font-size="10.5" fill="#1a73a8" font-weight="700">1편 아키텍처 개요</text>
+  <text x="155" y="96" text-anchor="middle" font-size="9" fill="#1a73a8">컨트롤 플레인/노드 컴포넌트</text>
+
+  <rect x="310" y="55" width="250" height="60" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="435" y="78" text-anchor="middle" font-size="10.5" fill="#1a73a8" font-weight="700">2편 워크로드 컨트롤러</text>
+  <text x="435" y="96" text-anchor="middle" font-size="9" fill="#1a73a8">Deployment/DaemonSet/StatefulSet</text>
+
+  <rect x="590" y="55" width="250" height="60" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="715" y="78" text-anchor="middle" font-size="10.5" fill="#2e7d32" font-weight="700">3편 Pod 네트워킹</text>
+  <text x="715" y="96" text-anchor="middle" font-size="9" fill="#2e7d32">IP-per-Pod, CNI</text>
+
+  <rect x="30" y="130" width="250" height="60" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="155" y="153" text-anchor="middle" font-size="10.5" fill="#2e7d32" font-weight="700">4편 Service (L4)</text>
+  <text x="155" y="171" text-anchor="middle" font-size="9" fill="#2e7d32">ClusterIP, kube-proxy DNAT</text>
+
+  <rect x="310" y="130" width="250" height="60" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="435" y="153" text-anchor="middle" font-size="10.5" fill="#8a6d00" font-weight="700">5편 EndpointSlice</text>
+  <text x="435" y="171" text-anchor="middle" font-size="9" fill="#8a6d00">실제 Pod IP 목록 관리</text>
+
+  <rect x="590" y="130" width="250" height="60" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="715" y="153" text-anchor="middle" font-size="10.5" fill="#8a6d00" font-weight="700">6편 CoreDNS</text>
+  <text x="715" y="171" text-anchor="middle" font-size="9" fill="#8a6d00">이름 → IP 해석</text>
+
+  <rect x="30" y="205" width="250" height="60" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="155" y="228" text-anchor="middle" font-size="10.5" fill="#c0392b" font-weight="700">7편 Ingress (L7)</text>
+  <text x="155" y="246" text-anchor="middle" font-size="9" fill="#c0392b">host/path 라우팅, 은퇴 이슈</text>
+
+  <rect x="310" y="205" width="250" height="60" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="435" y="228" text-anchor="middle" font-size="10.5" fill="#c0392b" font-weight="700">8편 Gateway API</text>
+  <text x="435" y="246" text-anchor="middle" font-size="9" fill="#c0392b">역할 분리 설계</text>
+
+  <rect x="590" y="205" width="250" height="60" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+  <text x="715" y="228" text-anchor="middle" font-size="10.5" fill="#7b3fa0" font-weight="700">9편 NetworkPolicy</text>
+  <text x="715" y="246" text-anchor="middle" font-size="9" fill="#7b3fa0">트래픽 허용/차단 제어</text>
+
+  <rect x="260" y="300" width="360" height="70" rx="8" fill="#333"/>
+  <text x="440" y="328" text-anchor="middle" font-size="11.5" fill="#fff" font-weight="700">10편 실전 트러블슈팅</text>
+  <text x="440" y="350" text-anchor="middle" font-size="9.5" fill="#eee">kubectl로 계층별 원인 좁혀나가기</text>
+
+  <text x="440" y="410" text-anchor="middle" font-size="11" fill="#555">아키텍처 → 워크로드 → L3(Pod) → L4(Service) → 이름 해석 → L7(Ingress/Gateway) → 트래픽 제어</text>
+  <text x="440" y="432" text-anchor="middle" font-size="10" fill="#777">각 개념은 독립적이지 않고, 요청 하나가 지나가는 실제 경로를 이룬다</text>
+</svg>

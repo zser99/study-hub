@@ -1,0 +1,39 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. Service DNS 이름 구조(FQDN)</text>
+
+  <rect x="60" y="60" width="700" height="60" rx="8" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="150" y="98" text-anchor="middle" font-size="13" fill="#1a73a8" font-weight="700">my-svc</text>
+  <text x="150" y="112" text-anchor="middle" font-size="8" fill="#1a73a8">Service 이름</text>
+
+  <text x="235" y="98" text-anchor="middle" font-size="13" fill="#555">.</text>
+
+  <text x="300" y="98" text-anchor="middle" font-size="13" fill="#2e7d32" font-weight="700">default</text>
+  <text x="300" y="112" text-anchor="middle" font-size="8" fill="#2e7d32">네임스페이스</text>
+
+  <text x="360" y="98" text-anchor="middle" font-size="13" fill="#555">.</text>
+
+  <text x="410" y="98" text-anchor="middle" font-size="13" fill="#b8860b" font-weight="700">svc</text>
+  <text x="410" y="112" text-anchor="middle" font-size="8" fill="#8a6d00">리소스 종류</text>
+
+  <text x="450" y="98" text-anchor="middle" font-size="13" fill="#555">.</text>
+
+  <text x="560" y="98" text-anchor="middle" font-size="13" fill="#7b3fa0" font-weight="700">cluster.local</text>
+  <text x="560" y="112" text-anchor="middle" font-size="8" fill="#7b3fa0">클러스터 도메인 (기본값)</text>
+
+  <rect x="80" y="150" width="300" height="70" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="230" y="175" text-anchor="middle" font-size="10.5" fill="#2e7d32" font-weight="700">일반 Service</text>
+  <text x="230" y="195" text-anchor="middle" font-size="9.5" fill="#2e7d32">조회 → ClusterIP 하나 응답</text>
+  <text x="230" y="210" text-anchor="middle" font-size="8.5" fill="#2e7d32">(4편의 가상 IP)</text>
+
+  <rect x="440" y="150" width="320" height="70" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="600" y="175" text-anchor="middle" font-size="10.5" fill="#c0392b" font-weight="700">Headless Service (ClusterIP: None)</text>
+  <text x="600" y="195" text-anchor="middle" font-size="9.5" fill="#c0392b">조회 → 소속 Pod IP 전체 목록 응답</text>
+  <text x="600" y="210" text-anchor="middle" font-size="8.5" fill="#c0392b">(StatefulSet과 함께 자주 사용)</text>
+
+  <rect x="180" y="250" width="460" height="60" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="410" y="272" text-anchor="middle" font-size="10" fill="#8a6d00" font-weight="700">Pod DNS: db-0.my-svc.default.svc.cluster.local</text>
+  <text x="410" y="292" text-anchor="middle" font-size="9" fill="#8a6d00">StatefulSet Pod가 Headless Service로 개별 이름을 가짐</text>
+
+  <text x="410" y="330" text-anchor="middle" font-size="11" fill="#555">같은 이름 규칙이라도 ClusterIP 유무에 따라 응답 내용이 완전히 다르다</text>
+</svg>

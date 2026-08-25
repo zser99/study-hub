@@ -1,0 +1,18 @@
+<svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="900" height="220" fill="#ffffff"/>
+  <text x="450" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. IP 주소의 네트워크부 / 호스트부 (192.168.1.10/24)</text>
+
+  <g font-size="12">
+    <rect x="60" y="60" width="600" height="50" fill="#e8f1fb" stroke="#1a73a8"/>
+    <text x="360" y="90" text-anchor="middle" fill="#1a73a8">네트워크부 (24비트) — 192.168.1</text>
+
+    <rect x="660" y="60" width="200" height="50" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="760" y="90" text-anchor="middle" fill="#8a6d00">호스트부 (8비트) — .10</text>
+  </g>
+
+  <line x1="660" y1="55" x2="660" y2="115" stroke="#c0392b" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="660" y="135" text-anchor="middle" font-size="12" fill="#c0392b">/24 경계</text>
+
+  <text x="450" y="170" text-anchor="middle" font-size="12.5" fill="#555">네트워크부가 길수록(/24 → /25 → /26...) 대역은 잘게 쪼개지고, 호스트부는 짧아져 사용 가능한 주소 수가 줄어든다</text>
+  <text x="450" y="192" text-anchor="middle" font-size="12" fill="#555">네트워크 주소(호스트부 전부 0)와 브로드캐스트 주소(호스트부 전부 1)는 호스트 할당에서 제외된다</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="860" height="320" fill="#ffffff"/>
+  <text x="430" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. TCP vs UDP — 무엇을 위해 무엇을 포기했나</text>
+
+  <rect x="40" y="55" width="360" height="230" rx="10" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+  <text x="220" y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#1a73a8">TCP — 신뢰성 우선</text>
+  <text x="65" y="112" font-size="12" fill="#1a73a8">✔ 연결 수립 (3-way handshake)</text>
+  <text x="65" y="137" font-size="12" fill="#1a73a8">✔ 순서 보장 (시퀀스 번호)</text>
+  <text x="65" y="162" font-size="12" fill="#1a73a8">✔ 재전송 (ACK 기반)</text>
+  <text x="65" y="187" font-size="12" fill="#1a73a8">✔ 흐름 제어 / 혼잡 제어</text>
+  <text x="65" y="220" font-size="12" fill="#555">→ 대가: 오버헤드, 지연</text>
+  <text x="65" y="250" font-size="12" fill="#555">HTTP, 파일 전송, 이메일</text>
+
+  <rect x="460" y="55" width="360" height="230" rx="10" fill="#fff7e6" stroke="#b8860b" stroke-width="1.5"/>
+  <text x="640" y="82" text-anchor="middle" font-size="14" font-weight="700" fill="#8a6d00">UDP — 속도 우선</text>
+  <text x="485" y="112" font-size="12" fill="#8a6d00">✘ 연결 수립 없음</text>
+  <text x="485" y="137" font-size="12" fill="#8a6d00">✘ 순서 보장 없음</text>
+  <text x="485" y="162" font-size="12" fill="#8a6d00">✘ 재전송 없음</text>
+  <text x="485" y="187" font-size="12" fill="#8a6d00">✘ 흐름/혼잡 제어 없음</text>
+  <text x="485" y="220" font-size="12" fill="#555">→ 대가: 유실 가능성</text>
+  <text x="485" y="250" font-size="12" fill="#555">DNS, 스트리밍, 온라인 게임</text>
+
+  <text x="430" y="308" text-anchor="middle" font-size="12.5" fill="#555">정확성이 중요하면 TCP, 실시간성이 중요하면 UDP</text>
+</svg>

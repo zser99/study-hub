@@ -1,0 +1,29 @@
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="900" height="320" fill="#ffffff"/>
+  <text x="450" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 테스트 피라미드</text>
+
+  <polygon points="450,55 320,140 580,140" fill="#fdecea" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="450" y="105" text-anchor="middle" font-size="12.5" fill="#c0392b" font-weight="700">@SpringBootTest</text>
+  <text x="450" y="122" text-anchor="middle" font-size="10.5" fill="#c0392b">느림 · 적게</text>
+
+  <polygon points="320,140 580,140 640,225 260,225" fill="#fff7e6" stroke="#b8860b" stroke-width="1.5"/>
+  <text x="450" y="185" text-anchor="middle" font-size="12.5" fill="#8a6d00" font-weight="700">슬라이스 테스트</text>
+  <text x="450" y="203" text-anchor="middle" font-size="10.5" fill="#8a6d00">@WebMvcTest · @DataJpaTest</text>
+
+  <polygon points="260,225 640,225 700,300 200,300" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="450" y="260" text-anchor="middle" font-size="13" fill="#2e7d32" font-weight="700">순수 단위 테스트</text>
+  <text x="450" y="280" text-anchor="middle" font-size="11" fill="#2e7d32">빠름 · 많이 (Mockito)</text>
+
+  <text x="780" y="90" font-size="12" fill="#555">↑ 실제 동작과 가까움</text>
+  <text x="780" y="290" font-size="12" fill="#555">↓ 빠르고 저렴함</text>
+  <line x1="770" y1="60" x2="770" y2="295" stroke="#aaa" stroke-width="1.3" marker-end="url(#arrowT)" marker-start="url(#arrowT2)"/>
+
+  <defs>
+    <marker id="arrowT" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#aaa"/>
+    </marker>
+    <marker id="arrowT2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M8,0 L0,4 L8,8 Z" fill="#aaa"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,43 @@
+<svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="880" height="340" fill="#ffffff"/>
+  <text x="440" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. @Configuration의 CGLIB 프록시 동작</text>
+
+  <rect x="40" y="70" width="150" height="55" rx="10" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="115" y="102" text-anchor="middle" font-size="13" fill="#2e7d32">memberService()</text>
+
+  <rect x="240" y="150" width="200" height="60" rx="10" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.7"/>
+  <text x="340" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#1a73a8">AppConfig$$CGLIB</text>
+  <text x="340" y="194" text-anchor="middle" font-size="11.5" fill="#1a73a8">(프록시)</text>
+
+  <rect x="40" y="230" width="150" height="55" rx="10" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+  <text x="115" y="262" text-anchor="middle" font-size="13" fill="#2e7d32">orderService()</text>
+
+  <polygon points="510,150 620,150 660,180 620,210 510,210 470,180" fill="#fff7e6" stroke="#b8860b" stroke-width="1.5"/>
+  <text x="565" y="175" text-anchor="middle" font-size="12" fill="#8a6d00">이미 등록된</text>
+  <text x="565" y="192" text-anchor="middle" font-size="12" fill="#8a6d00">빈인가?</text>
+
+  <rect x="700" y="90" width="150" height="55" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="1.5"/>
+  <text x="775" y="113" text-anchor="middle" font-size="12.5" fill="#c0392b">Yes → 싱글톤</text>
+  <text x="775" y="130" text-anchor="middle" font-size="12.5" fill="#c0392b">레지스트리에서 반환</text>
+
+  <rect x="700" y="215" width="150" height="55" rx="10" fill="#f3e8fb" stroke="#7b3fa0" stroke-width="1.5"/>
+  <text x="775" y="238" text-anchor="middle" font-size="12.5" fill="#7b3fa0">No → 원본 메서드</text>
+  <text x="775" y="255" text-anchor="middle" font-size="12.5" fill="#7b3fa0">실행 후 등록</text>
+
+  <g stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow3)">
+    <line x1="115" y1="125" x2="290" y2="155"/>
+    <line x1="115" y1="230" x2="290" y2="205"/>
+    <line x1="440" y1="180" x2="505" y2="180"/>
+    <line x1="660" y1="170" x2="695" y2="130"/>
+    <line x1="660" y1="195" x2="695" y2="235"/>
+  </g>
+
+  <text x="440" y="310" text-anchor="middle" font-size="13" fill="#555">memberService()와 orderService() 모두 memberRepository()를 호출하지만,</text>
+  <text x="440" y="328" text-anchor="middle" font-size="13" fill="#555">프록시가 가로채 "이미 있으면 그걸 반환"하므로 결과적으로 같은 인스턴스가 된다</text>
+
+  <defs>
+    <marker id="arrow3" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

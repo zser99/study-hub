@@ -1,0 +1,30 @@
+<svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="820" height="320" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. 네임스페이스(시야 격리) vs cgroup(자원 제한)</text>
+
+  <text x="220" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#1a73a8">네임스페이스 — "무엇이 보이는가"</text>
+  <rect x="60" y="65" width="320" height="150" rx="6" fill="#fff" stroke="#999"/>
+  <text x="220" y="82" text-anchor="middle" font-size="9.5" fill="#555">호스트 전체 프로세스 목록</text>
+  <rect x="75" y="90" width="80" height="24" fill="#f5f5f5" stroke="#999"/><text x="115" y="106" text-anchor="middle" font-size="8.5" fill="#555">PID 4821</text>
+  <rect x="165" y="90" width="80" height="24" fill="#e8f1fb" stroke="#1a73a8"/><text x="205" y="106" text-anchor="middle" font-size="8.5" fill="#1a73a8">PID 4822</text>
+  <rect x="255" y="90" width="80" height="24" fill="#f5f5f5" stroke="#999"/><text x="295" y="106" text-anchor="middle" font-size="8.5" fill="#555">PID 4823</text>
+
+  <rect x="140" y="140" width="180" height="60" rx="6" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+  <text x="230" y="160" text-anchor="middle" font-size="9.5" fill="#1a73a8">컨테이너 안에서는</text>
+  <text x="230" y="178" text-anchor="middle" font-size="10.5" fill="#1a73a8" font-weight="700">PID 4822 → 자기 자신을 PID 1로 인식</text>
+
+  <text x="220" y="238" text-anchor="middle" font-size="9.5" fill="#555">다른 프로세스(4821, 4823)는 보이지 않음</text>
+
+  <text x="620" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#2e7d32">cgroup — "얼마나 쓸 수 있는가"</text>
+  <rect x="460" y="65" width="320" height="150" rx="6" fill="#fff" stroke="#999"/>
+  <rect x="480" y="80" width="280" height="30" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="620" y="100" text-anchor="middle" font-size="10" fill="#2e7d32">CPU 상한: 2코어</text>
+  <rect x="480" y="118" width="280" height="30" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="620" y="138" text-anchor="middle" font-size="10" fill="#8a6d00">메모리 상한: 512MB</text>
+  <rect x="480" y="156" width="280" height="30" fill="#fdecea" stroke="#c0392b"/>
+  <text x="620" y="176" text-anchor="middle" font-size="10" fill="#c0392b">디스크 I/O 상한: 50MB/s</text>
+  <text x="620" y="200" text-anchor="middle" font-size="9.5" fill="#555">이 그룹의 프로세스들은 이 상한을 넘을 수 없다</text>
+
+  <text x="410" y="270" text-anchor="middle" font-size="12" fill="#555">네임스페이스는 "격리된 것처럼 보이게", cgroup은 "실제로 넘지 못하게" 만든다</text>
+  <text x="410" y="292" text-anchor="middle" font-size="11" fill="#777">둘 다 커널 하나를 공유한 채로 동작한다는 점이 VM과의 근본적 차이다</text>
+</svg>

@@ -1,0 +1,41 @@
+<svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="900" height="260" fill="#ffffff"/>
+  <text x="450" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. curl -w로 보는 구간별 소요 시간</text>
+
+  <g font-size="11">
+    <rect x="40" y="70" width="130" height="40" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="105" y="94" text-anchor="middle" fill="#8a6d00">DNS 조회</text>
+
+    <rect x="170" y="70" width="150" height="40" fill="#e8f1fb" stroke="#1a73a8"/>
+    <text x="245" y="94" text-anchor="middle" fill="#1a73a8">TCP 연결(3-way)</text>
+
+    <rect x="320" y="70" width="180" height="40" fill="#f3e8fb" stroke="#7b3fa0"/>
+    <text x="410" y="94" text-anchor="middle" fill="#7b3fa0">TLS handshake</text>
+
+    <rect x="500" y="70" width="200" height="40" fill="#fdecea" stroke="#c0392b"/>
+    <text x="600" y="94" text-anchor="middle" fill="#c0392b">TTFB (서버 처리)</text>
+
+    <rect x="700" y="70" width="160" height="40" fill="#eef7ee" stroke="#2e7d32"/>
+    <text x="780" y="94" text-anchor="middle" fill="#2e7d32">응답 수신</text>
+  </g>
+
+  <g font-size="10" fill="#555">
+    <text x="105" y="128">6편</text>
+    <text x="245" y="128">4편</text>
+    <text x="410" y="128">8편</text>
+    <text x="600" y="128">5·7편</text>
+    <text x="780" y="128">5편</text>
+  </g>
+
+  <line x1="40" y1="150" x2="860" y2="150" stroke="#333" stroke-width="1.5" marker-end="url(#arrowC)"/>
+  <text x="450" y="145" text-anchor="middle" font-size="11" fill="#333">time_total (전체 응답 시간)</text>
+
+  <text x="450" y="190" text-anchor="middle" font-size="12.5" fill="#555">어느 구간이 유독 길다면, 그 구간에 해당하는 편의 지식으로 원인을 좁힌다</text>
+  <text x="450" y="212" text-anchor="middle" font-size="12" fill="#555">예: TLS 구간이 길다 → 인증서 문제 or TLS 1.2 사용 중(8편) / TTFB가 길다 → 서버·DB 처리 지연(7편)</text>
+
+  <defs>
+    <marker id="arrowC" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

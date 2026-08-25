@@ -1,0 +1,47 @@
+<svg viewBox="0 0 960 260" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="960" height="260" fill="#ffffff"/>
+  <text x="480" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 빈의 생명주기</text>
+
+  <g font-size="12.5">
+    <rect x="20" y="70" width="150" height="60" rx="10" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+    <text x="95" y="95" text-anchor="middle" fill="#1a73a8" font-weight="700">① 빈 정의 등록</text>
+    <text x="95" y="113" text-anchor="middle" fill="#555">BeanDefinition</text>
+
+    <rect x="192" y="70" width="150" height="60" rx="10" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+    <text x="267" y="95" text-anchor="middle" fill="#1a73a8" font-weight="700">② 객체 생성</text>
+    <text x="267" y="113" text-anchor="middle" fill="#555">리플렉션</text>
+
+    <rect x="364" y="70" width="150" height="60" rx="10" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.5"/>
+    <text x="439" y="95" text-anchor="middle" fill="#1a73a8" font-weight="700">③ 의존관계 주입</text>
+    <text x="439" y="113" text-anchor="middle" fill="#555">생성자·필드·수정자</text>
+
+    <rect x="536" y="70" width="150" height="60" rx="10" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.5"/>
+    <text x="611" y="95" text-anchor="middle" fill="#2e7d32" font-weight="700">④ 초기화 콜백</text>
+    <text x="611" y="113" text-anchor="middle" fill="#555">@PostConstruct</text>
+
+    <rect x="708" y="70" width="120" height="60" rx="10" fill="#fff7e6" stroke="#b8860b" stroke-width="1.5"/>
+    <text x="768" y="95" text-anchor="middle" fill="#8a6d00" font-weight="700">⑤ 빈 사용</text>
+    <text x="768" y="113" text-anchor="middle" fill="#555">싱글톤 레지스트리</text>
+
+    <rect x="850" y="70" width="95" height="60" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="1.5"/>
+    <text x="897" y="95" text-anchor="middle" fill="#c0392b" font-weight="700">⑥ 소멸 콜백</text>
+    <text x="897" y="113" text-anchor="middle" fill="#555">@PreDestroy</text>
+  </g>
+
+  <g stroke="#999" stroke-width="2" fill="none" marker-end="url(#arrow2)">
+    <line x1="170" y1="100" x2="190" y2="100"/>
+    <line x1="342" y1="100" x2="362" y2="100"/>
+    <line x1="514" y1="100" x2="534" y2="100"/>
+    <line x1="686" y1="100" x2="706" y2="100"/>
+    <line x1="828" y1="100" x2="848" y2="100"/>
+  </g>
+
+  <text x="480" y="175" text-anchor="middle" font-size="13" fill="#555">신입사원 온보딩에 비유하면: 채용(①) → 자리 배정(②) → 팀 소개(③) → 업무 준비 완료(④) → 실제 업무(⑤) → 인수인계(⑥)</text>
+  <text x="480" y="200" text-anchor="middle" font-size="12.5" fill="#c0392b">※ 프로토타입 빈은 ④까지만 컨테이너가 관여하고, ⑥은 호출하지 않는다</text>
+
+  <defs>
+    <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#999"/>
+    </marker>
+  </defs>
+</svg>

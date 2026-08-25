@@ -1,0 +1,42 @@
+<svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowIn" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#1a73a8"/>
+    </marker>
+  </defs>
+  <rect width="820" height="320" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 디렉토리, inode, 데이터 블록의 관계</text>
+
+  <text x="150" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#333">디렉토리 (파일명 → inode 번호)</text>
+  <rect x="60" y="65" width="180" height="130" fill="#fff" stroke="#999"/>
+  <rect x="60" y="65" width="180" height="26" fill="#f5f5f5"/>
+  <text x="100" y="83" font-size="9.5" fill="#555">이름</text><text x="200" y="83" font-size="9.5" fill="#555">inode#</text>
+  <rect x="60" y="91" width="180" height="26" fill="#e8f1fb"/>
+  <text x="100" y="108" font-size="10" fill="#1a73a8">report.md</text><text x="205" y="108" font-size="10" fill="#1a73a8">102</text>
+  <rect x="60" y="117" width="180" height="26" fill="#eef7ee"/>
+  <text x="100" y="134" font-size="10" fill="#2e7d32">report_backup.md</text><text x="205" y="134" font-size="10" fill="#2e7d32">102</text>
+  <rect x="60" y="143" width="180" height="26" fill="#fff7e6"/>
+  <text x="100" y="160" font-size="10" fill="#8a6d00">photo.png</text><text x="205" y="160" font-size="10" fill="#8a6d00">205</text>
+
+  <text x="380" y="228" text-anchor="middle" font-size="9.5" fill="#555">두 이름이 같은 inode 102를 가리킴 (하드 링크)</text>
+  <path d="M240,104 Q320,220 400,104" fill="none" stroke="#1a73a8" stroke-dasharray="3,3" marker-end="url(#arrowIn)"/>
+  <path d="M240,130 Q320,220 400,104" fill="none" stroke="#2e7d32" stroke-dasharray="3,3"/>
+
+  <text x="490" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#333">inode 102</text>
+  <rect x="400" y="65" width="180" height="130" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="420" y="85" font-size="9.5" fill="#1a73a8">파일 타입: 일반 파일</text>
+  <text x="420" y="103" font-size="9.5" fill="#1a73a8">권한: rw-r--r--</text>
+  <text x="420" y="121" font-size="9.5" fill="#1a73a8">크기: 4.2KB</text>
+  <text x="420" y="139" font-size="9.5" fill="#1a73a8">타임스탬프: ...</text>
+  <text x="420" y="157" font-size="9.5" fill="#1a73a8">데이터 블록 포인터 →</text>
+
+  <line x1="580" y1="150" x2="640" y2="150" stroke="#1a73a8" stroke-width="1.5" marker-end="url(#arrowIn)"/>
+
+  <text x="720" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#333">데이터 블록</text>
+  <rect x="650" y="120" width="45" height="30" fill="#fff" stroke="#b8860b"/><text x="672" y="139" text-anchor="middle" font-size="9" fill="#8a6d00">블록12</text>
+  <rect x="700" y="120" width="45" height="30" fill="#fff" stroke="#b8860b"/><text x="722" y="139" text-anchor="middle" font-size="9" fill="#8a6d00">블록45</text>
+  <rect x="750" y="120" width="45" height="30" fill="#fff" stroke="#b8860b"/><text x="772" y="139" text-anchor="middle" font-size="9" fill="#8a6d00">블록46</text>
+
+  <text x="410" y="270" text-anchor="middle" font-size="12" fill="#555">inode에는 파일명이 없다 — 이름은 디렉토리에, 메타데이터와 위치 정보는 inode에 있다</text>
+  <text x="410" y="292" text-anchor="middle" font-size="11" fill="#777">모든 파일명이 사라져야 비로소 inode와 데이터 블록이 실제로 해제된다</text>
+</svg>

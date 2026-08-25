@@ -1,0 +1,32 @@
+<svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="820" height="340" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. SSTF vs SCAN — 헤드 이동 경로 비교</text>
+  <text x="410" y="46" text-anchor="middle" font-size="11" fill="#777">현재 위치 50, 요청 트랙: 10, 20, 55, 60, 90, 150 (트랙 0~199)</text>
+
+  <line x1="70" y1="100" x2="770" y2="100" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="770" y2="200" stroke="#ccc" stroke-width="1.5"/>
+
+  <text x="55" y="104" text-anchor="end" font-size="10" fill="#c0392b" font-weight="700">SSTF</text>
+  <text x="55" y="204" text-anchor="end" font-size="10" fill="#1a73a8" font-weight="700">SCAN</text>
+
+  <!-- track scale ticks -->
+  <text x="70" y="240" font-size="9" fill="#777">0</text>
+  <text x="420" y="240" font-size="9" fill="#777">100</text>
+  <text x="770" y="240" font-size="9" fill="#777">199</text>
+
+  <!-- SSTF path: 50→55→60→20→10→90→150 -->
+  <path d="M270,100 L297,100 L305,100 L110,100 L70,100 L490,100 L670,100" fill="none" stroke="#c0392b" stroke-width="2"/>
+  <circle cx="270" cy="100" r="4" fill="#c0392b"/>
+  <text x="270" y="88" text-anchor="middle" font-size="8.5" fill="#c0392b">시작50</text>
+  <text x="670" y="88" text-anchor="middle" font-size="8.5" fill="#c0392b">150(멀어서 마지막)</text>
+
+  <!-- SCAN path: 50→55→60→90→150→199(end)→20→10 -->
+  <path d="M270,200 L297,200 L305,200 L490,200 L670,200 L770,200 L110,200 L70,200" fill="none" stroke="#1a73a8" stroke-width="2"/>
+  <circle cx="270" cy="200" r="4" fill="#1a73a8"/>
+  <text x="270" y="188" text-anchor="middle" font-size="8.5" fill="#1a73a8">시작50</text>
+  <text x="770" y="188" text-anchor="middle" font-size="8.5" fill="#1a73a8">끝까지 갔다가 방향 전환</text>
+
+  <rect x="130" y="260" width="560" height="62" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="410" y="282" text-anchor="middle" font-size="11.5" fill="#c0392b" font-weight="700">SSTF: 가까운 요청부터 처리 → 탐색 거리는 짧지만, 먼 요청(150)이 계속 밀릴 수 있다</text>
+  <text x="410" y="302" text-anchor="middle" font-size="11" fill="#1a73a8">SCAN: 한 방향으로 끝까지 훑고 돌아옴 → 기아 없이 모든 요청을 순서대로 처리</text>
+</svg>

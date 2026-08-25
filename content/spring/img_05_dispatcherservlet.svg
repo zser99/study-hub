@@ -1,0 +1,58 @@
+<svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="960" height="300" fill="#ffffff"/>
+  <text x="480" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. DispatcherServlet의 요청 처리 6단계</text>
+
+  <rect x="10" y="80" width="120" height="70" rx="10" fill="#333" />
+  <text x="70" y="110" text-anchor="middle" font-size="13" fill="#fff" font-weight="700">Client</text>
+  <text x="70" y="128" text-anchor="middle" font-size="11" fill="#ddd">HTTP 요청</text>
+
+  <rect x="160" y="70" width="150" height="90" rx="10" fill="#1a1a1a"/>
+  <text x="235" y="100" text-anchor="middle" font-size="12.5" fill="#fff" font-weight="700">DispatcherServlet</text>
+  <text x="235" y="120" text-anchor="middle" font-size="11" fill="#ccc">(오케스트레이터)</text>
+  <text x="235" y="140" text-anchor="middle" font-size="10.5" fill="#999">비즈니스 로직 모름</text>
+
+  <g font-size="11.5">
+    <rect x="350" y="30" width="130" height="50" rx="8" fill="#e8f1fb" stroke="#1a73a8"/>
+    <text x="415" y="50" text-anchor="middle" fill="#1a73a8" font-weight="700">① HandlerMapping</text>
+    <text x="415" y="66" text-anchor="middle" fill="#555">핸들러 탐색</text>
+
+    <rect x="510" y="30" width="130" height="50" rx="8" fill="#e8f1fb" stroke="#1a73a8"/>
+    <text x="575" y="50" text-anchor="middle" fill="#1a73a8" font-weight="700">② HandlerAdapter</text>
+    <text x="575" y="66" text-anchor="middle" fill="#555">실행 담당자 탐색</text>
+
+    <rect x="670" y="30" width="130" height="50" rx="8" fill="#eef7ee" stroke="#2e7d32"/>
+    <text x="735" y="50" text-anchor="middle" fill="#2e7d32" font-weight="700">③ 핸들러 실행</text>
+    <text x="735" y="66" text-anchor="middle" fill="#555">@Controller 메서드</text>
+
+    <rect x="350" y="170" width="130" height="50" rx="8" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="415" y="190" text-anchor="middle" fill="#8a6d00" font-weight="700">④ ModelAndView</text>
+    <text x="415" y="206" text-anchor="middle" fill="#555">결과 포장</text>
+
+    <rect x="510" y="170" width="130" height="50" rx="8" fill="#fff7e6" stroke="#b8860b"/>
+    <text x="575" y="190" text-anchor="middle" fill="#8a6d00" font-weight="700">⑤ ViewResolver</text>
+    <text x="575" y="206" text-anchor="middle" fill="#555">뷰 이름 → View</text>
+
+    <rect x="670" y="170" width="130" height="50" rx="8" fill="#f3e8fb" stroke="#7b3fa0"/>
+    <text x="735" y="190" text-anchor="middle" fill="#7b3fa0" font-weight="700">⑥ 렌더링/컨버팅</text>
+    <text x="735" y="206" text-anchor="middle" fill="#555">HTML or JSON</text>
+  </g>
+
+  <g stroke="#999" stroke-width="1.8" fill="none" marker-end="url(#arrow5)">
+    <line x1="130" y1="115" x2="155" y2="110"/>
+    <line x1="310" y1="90" x2="345" y2="60"/>
+    <line x1="480" y1="55" x2="505" y2="55"/>
+    <line x1="640" y1="55" x2="665" y2="55"/>
+    <line x1="735" y1="80" x2="415" y2="165"/>
+    <line x1="480" y1="195" x2="505" y2="195"/>
+    <line x1="640" y1="195" x2="665" y2="195"/>
+  </g>
+
+  <text x="480" y="255" text-anchor="middle" font-size="12.5" fill="#c0392b">※ @RestController / @ResponseBody라면 ④·⑤ 단계를 건너뛰고 곧바로 HttpMessageConverter로 직행한다</text>
+  <text x="480" y="278" text-anchor="middle" font-size="12.5" fill="#555">DispatcherServlet은 "무엇을 할지"만 지휘할 뿐, "어떻게 할지"는 각 컴포넌트에 위임한다</text>
+
+  <defs>
+    <marker id="arrow5" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#999"/>
+    </marker>
+  </defs>
+</svg>

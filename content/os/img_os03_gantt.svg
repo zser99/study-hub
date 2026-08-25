@@ -1,0 +1,29 @@
+<svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="800" height="320" fill="#ffffff"/>
+  <text x="400" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 1. 세 알고리즘의 실행 순서(간트 차트) 비교</text>
+  <text x="400" y="44" text-anchor="middle" font-size="11" fill="#777">P1(8), P2(2), P3(4) — 괄호 안은 필요한 실행 시간(초)</text>
+
+  <text x="60" y="80" font-size="12" font-weight="700" fill="#c0392b">FCFS</text>
+  <rect x="120" y="65" width="240" height="28" fill="#fdecea" stroke="#c0392b"/><text x="240" y="84" text-anchor="middle" font-size="10.5" fill="#c0392b">P1 (0~8)</text>
+  <rect x="360" y="65" width="60" height="28" fill="#fdecea" stroke="#c0392b"/><text x="390" y="84" text-anchor="middle" font-size="10" fill="#c0392b">P2</text>
+  <rect x="420" y="65" width="120" height="28" fill="#fdecea" stroke="#c0392b"/><text x="480" y="84" text-anchor="middle" font-size="10" fill="#c0392b">P3</text>
+  <text x="580" y="84" font-size="10.5" fill="#c0392b">P2는 8초나 기다려야 함(콘보이 효과)</text>
+
+  <text x="60" y="135" font-size="12" font-weight="700" fill="#1a73a8">SJF</text>
+  <rect x="120" y="120" width="60" height="28" fill="#e8f1fb" stroke="#1a73a8"/><text x="150" y="139" text-anchor="middle" font-size="10" fill="#1a73a8">P2</text>
+  <rect x="180" y="120" width="120" height="28" fill="#e8f1fb" stroke="#1a73a8"/><text x="240" y="139" text-anchor="middle" font-size="10" fill="#1a73a8">P3</text>
+  <rect x="300" y="120" width="240" height="28" fill="#e8f1fb" stroke="#1a73a8"/><text x="420" y="139" text-anchor="middle" font-size="10.5" fill="#1a73a8">P1 (2~10)</text>
+  <text x="620" y="139" font-size="10.5" fill="#1a73a8">평균 대기시간 최소, 단 P1은 뒤로 밀림</text>
+
+  <text x="60" y="190" font-size="12" font-weight="700" fill="#2e7d32">라운드 로빈(퀀텀=2)</text>
+  <rect x="120" y="175" width="60" height="28" fill="#eef7ee" stroke="#2e7d32"/><text x="150" y="194" text-anchor="middle" font-size="9" fill="#2e7d32">P1</text>
+  <rect x="180" y="175" width="60" height="28" fill="#eef7ee" stroke="#2e7d32"/><text x="210" y="194" text-anchor="middle" font-size="9" fill="#2e7d32">P2</text>
+  <rect x="240" y="175" width="60" height="28" fill="#eef7ee" stroke="#2e7d32"/><text x="270" y="194" text-anchor="middle" font-size="9" fill="#2e7d32">P3</text>
+  <rect x="300" y="175" width="60" height="28" fill="#eef7ee" stroke="#2e7d32"/><text x="330" y="194" text-anchor="middle" font-size="9" fill="#2e7d32">P1</text>
+  <rect x="360" y="175" width="60" height="28" fill="#eef7ee" stroke="#2e7d32"/><text x="390" y="194" text-anchor="middle" font-size="9" fill="#2e7d32">P3</text>
+  <rect x="420" y="175" width="120" height="28" fill="#eef7ee" stroke="#2e7d32"/><text x="480" y="194" text-anchor="middle" font-size="9" fill="#2e7d32">P1</text>
+  <text x="620" y="194" font-size="10.5" fill="#2e7d32">모두가 골고루, 짧은 텀 안에 반응</text>
+
+  <text x="400" y="250" text-anchor="middle" font-size="12.5" fill="#555">같은 작업들이라도 어떤 알고리즘을 쓰느냐에 따라 대기 시간과 응답성이 크게 달라진다</text>
+  <text x="400" y="272" text-anchor="middle" font-size="12" fill="#555">"완벽한 알고리즘"은 없고, 어떤 지표를 우선할지의 선택만 있을 뿐이다</text>
+</svg>

@@ -1,0 +1,34 @@
+<svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <rect width="860" height="300" fill="#ffffff"/>
+  <text x="430" y="24" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. 시스템 콜과 모드 전환</text>
+
+  <rect x="40" y="60" width="780" height="70" rx="8" fill="#eef7ee" stroke="#2e7d32" stroke-width="1.3"/>
+  <text x="60" y="82" font-size="12" fill="#2e7d32" font-weight="700">사용자 모드</text>
+  <text x="120" y="105" font-size="11.5" fill="#2e7d32">① read() 호출</text>
+
+  <rect x="40" y="180" width="780" height="70" rx="8" fill="#e8f1fb" stroke="#1a73a8" stroke-width="1.3"/>
+  <text x="60" y="202" font-size="12" fill="#1a73a8" font-weight="700">커널 모드</text>
+  <text x="450" y="225" text-anchor="middle" font-size="11.5" fill="#1a73a8">③ 커널이 실제 디스크/네트워크 작업 수행</text>
+
+  <rect x="230" y="85" width="150" height="35" rx="6" fill="#fff" stroke="#2e7d32"/>
+  <text x="305" y="107" text-anchor="middle" font-size="10.5" fill="#2e7d32">라이브러리 래퍼</text>
+
+  <line x1="380" y1="102" x2="420" y2="200" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowSys)"/>
+  <text x="470" y="150" font-size="11" fill="#c0392b" font-weight="700">② 트랩(소프트웨어 인터럽트)</text>
+  <text x="470" y="168" font-size="10.5" fill="#c0392b">→ 모드 전환</text>
+
+  <line x1="600" y1="200" x2="640" y2="100" stroke="#c0392b" stroke-width="2" marker-end="url(#arrowSys2)"/>
+  <text x="650" y="150" font-size="11" fill="#c0392b" font-weight="700">④ 결과 반환</text>
+  <text x="650" y="168" font-size="10.5" fill="#c0392b">→ 사용자 모드 복귀</text>
+
+  <text x="430" y="275" text-anchor="middle" font-size="12.5" fill="#555">이 왕복 자체에 CPU 비용이 든다 → 잦은 시스템 콜 호출은 버퍼링으로 줄인다</text>
+
+  <defs>
+    <marker id="arrowSys" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#c0392b"/>
+    </marker>
+    <marker id="arrowSys2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#c0392b"/>
+    </marker>
+  </defs>
+</svg>

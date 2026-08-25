@@ -1,0 +1,40 @@
+<svg viewBox="0 0 820 300" xmlns="http://www.w3.org/2000/svg" font-family="'Apple SD Gothic Neo','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrowPf" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="820" height="300" fill="#ffffff"/>
+  <text x="410" y="26" text-anchor="middle" font-size="18" font-weight="700" fill="#222">그림 2. 페이지 폴트 처리 흐름</text>
+
+  <rect x="30" y="60" width="130" height="46" rx="6" fill="#e8f1fb" stroke="#1a73a8"/>
+  <text x="95" y="80" text-anchor="middle" font-size="10" fill="#1a73a8">① 페이지 테이블</text>
+  <text x="95" y="94" text-anchor="middle" font-size="10" fill="#1a73a8">조회 → 유효비트 0</text>
+
+  <rect x="200" y="60" width="130" height="46" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="265" y="80" text-anchor="middle" font-size="10" fill="#c0392b">② 트랩 발생</text>
+  <text x="265" y="94" text-anchor="middle" font-size="10" fill="#c0392b">커널 모드로 전환</text>
+
+  <rect x="370" y="60" width="130" height="46" rx="6" fill="#fff7e6" stroke="#b8860b"/>
+  <text x="435" y="80" text-anchor="middle" font-size="10" fill="#8a6d00">③ 디스크에서</text>
+  <text x="435" y="94" text-anchor="middle" font-size="10" fill="#8a6d00">페이지 읽어옴</text>
+
+  <rect x="540" y="60" width="130" height="46" rx="6" fill="#eef7ee" stroke="#2e7d32"/>
+  <text x="605" y="80" text-anchor="middle" font-size="10" fill="#2e7d32">④ 페이지 테이블</text>
+  <text x="605" y="94" text-anchor="middle" font-size="10" fill="#2e7d32">갱신</text>
+
+  <rect x="710" y="60" width="90" height="46" rx="6" fill="#f3e8fb" stroke="#7b3fa0"/>
+  <text x="755" y="80" text-anchor="middle" font-size="10" fill="#7b3fa0">⑤ 명령어</text>
+  <text x="755" y="94" text-anchor="middle" font-size="10" fill="#7b3fa0">재실행</text>
+
+  <line x1="160" y1="83" x2="196" y2="83" stroke="#555" stroke-width="1.5" marker-end="url(#arrowPf)"/>
+  <line x1="330" y1="83" x2="366" y2="83" stroke="#555" stroke-width="1.5" marker-end="url(#arrowPf)"/>
+  <line x1="500" y1="83" x2="536" y2="83" stroke="#555" stroke-width="1.5" marker-end="url(#arrowPf)"/>
+  <line x1="670" y1="83" x2="706" y2="83" stroke="#555" stroke-width="1.5" marker-end="url(#arrowPf)"/>
+
+  <rect x="130" y="160" width="560" height="60" rx="6" fill="#fdecea" stroke="#c0392b"/>
+  <text x="410" y="184" text-anchor="middle" font-size="12" fill="#c0392b" font-weight="700">페이지 폴트는 오류가 아니라 가상 메모리의 정상적인 동작 방식이다</text>
+  <text x="410" y="204" text-anchor="middle" font-size="10.5" fill="#c0392b">단, 디스크 접근은 메모리 접근보다 수만 배 느려 자주 발생하면 성능이 급락한다</text>
+
+  <text x="410" y="260" text-anchor="middle" font-size="12" fill="#555">빈 프레임이 없다면? → 어떤 페이지를 내보낼지 결정하는 '페이지 교체 알고리즘'이 개입한다 (다음 편)</text>
+</svg>
